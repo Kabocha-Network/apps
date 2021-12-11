@@ -54,6 +54,7 @@ import interbtc from './interbtc';
 import ipse from './ipse';
 import jupiter from './jupiter';
 import jupiterRococo from './jupiter-rococo';
+import kabocha from './kabocha';
 import khala from './khala';
 import kilt from './kilt';
 import konomi from './konomi';
@@ -184,6 +185,7 @@ const spec: Record<string, OverrideBundleDefinition> = {
   'jupiter-prep': jupiter,
   'jupiter-rococo': jupiterRococo,
   khala,
+  kabocha,
   'kilt-parachain': kilt,
   'kilt-spiritnet': kilt,
   'kintsugi-parachain': interbtc,

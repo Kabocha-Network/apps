@@ -19,7 +19,10 @@ export const KULUPU_GENESIS = getGenesis('kulupu');
 export const KUSAMA_GENESIS = getGenesis('kusama');
 
 export const POLKADOT_GENESIS = getGenesis('polkadot');
+
 export const POLKADOT_DENOM_BLOCK = new BN(1248328);
+
+export const POPART_GENESIS = '0x5c45603406f5c94029eadb64f747e473bac6058648ac1e273317d5a091bb01bb';
 
 export const ROCOCO_GENESIS = '0xc196f81260cf1686172b47a79cf002120735d7cb0eb1474e8adce56618456fff';
 

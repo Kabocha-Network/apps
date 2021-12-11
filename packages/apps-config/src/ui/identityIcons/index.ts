@@ -14,6 +14,7 @@ export const identityNodes: Record<string, string> = [
 }), {});
 
 export const identitySpec: Record<string, string> = [
+  ['pop-art', 'polkadot'],
   ['kusama', 'polkadot'],
   ['polkadot', 'polkadot'],
   ['rococo', 'polkadot'],

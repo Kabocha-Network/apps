@@ -6,6 +6,7 @@ import type { LinkOption } from './types';
 
 import { createRococo } from './testingRelayRococo';
 import { createWestend } from './testingRelayWestend';
+import { createPopArt } from './testingRelayPopArt';
 import { expandEndpoints } from './util';
 
 export function createRococoRelay (t: TFunction, firstOnly: boolean, withSort: boolean): LinkOption[] {
@@ -14,4 +15,7 @@ export function createRococoRelay (t: TFunction, firstOnly: boolean, withSort: b
 
 export function createWestendRelay (t: TFunction, firstOnly: boolean, withSort: boolean): LinkOption[] {
   return expandEndpoints(t, [createWestend(t)], firstOnly, withSort);
+}
+export function createPopArtRelay (t: TFunction, firstOnly: boolean, withSort: boolean): LinkOption[] {
+  return expandEndpoints(t, [createPopArt(t)], firstOnly, withSort);
 }

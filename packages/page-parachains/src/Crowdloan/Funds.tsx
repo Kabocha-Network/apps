@@ -62,10 +62,23 @@ function Funds ({ bestNumber, className, leasePeriod, value }: Props): React.Rea
     [leasePeriod, value]
   );
   const hasLinksMap = useIsParasLinked(allIds);
-  const [activeSorted, endedSorted] = useMemo(
+  const [upcomingSorted, activeSorted, endedSorted] = useMemo(
     () => [sortList(hasLinksMap, active), sortList(hasLinksMap, ended)],
     [active, ended, hasLinksMap]
   );
+
+
+  const headerUpcomingRef = useRef([
+    [t('ongoing'), 'start', 2],
+    [undefined, 'media--800'],
+    [undefined, 'media--1400'],
+    [t('ending'), 'media--1200'],
+    [t('leases')],
+    [t('raised')],
+    [t('count'), 'media--1100'],
+    [undefined, 'media--1000']
+  ]);
+
 
   const headerActiveRef = useRef([
     [t('ongoing'), 'start', 2],
@@ -95,6 +108,21 @@ function Funds ({ bestNumber, className, leasePeriod, value }: Props): React.Rea
         className='warning centered'
         content={t<string>('Do not transfer any funds directly to a specific account that is associated with a loan or a team. Use the "Contribute" action to record the contribution on-chain using the crowdloan runtime module. When the fund is dissolved, after either the parachain lease expires or the loan ending without winning, the full value will be returned to your account by the runtime. Funds sent directly to an account, without using the crowdloan functionality, may not be returned by the receiving account.')}
       />
+      <Table
+        className={className}
+        empty={value && upcomingSorted && t<string>('No upcoming campaigns found')}
+        header={headerActiveRef.current}
+      >
+        {upcomingSorted?.map((fund) => (
+          <Fund
+            bestHash={bestHash}
+            bestNumber={bestNumber}
+            isOngoing
+            key={fund.accountId}
+            value={fund}
+          />
+        ))}
+      </Table>
       <Table
         className={className}
         empty={value && activeSorted && t<string>('No active campaigns found')}

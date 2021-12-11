@@ -23,6 +23,7 @@ import chainHydrate from './chains/hydrate.png';
 import chainInterBTC from './chains/interbtc.png';
 import chainKarura from './chains/karura.svg';
 import chainKintsugi from './chains/kintsugi.png';
+import chainKabocha from './chains/kabocha.svg';
 import chainKusama from './chains/kusama-128.gif';
 import chainOpal from './chains/opal-logo.png';
 import chainParallel from './chains/parallel.svg';
@@ -90,6 +91,7 @@ import nodeIntegritee from './nodes/integritee.svg';
 import nodeInterBTC from './nodes/interbtc.png';
 import nodeIpse from './nodes/ipse.png';
 import nodeJupiter from './nodes/jupiter.svg';
+import nodeKabocha from './nodes/kabocha.svg';
 import nodeKhala from './nodes/khala.svg';
 import nodeKilt from './nodes/kilt.png';
 import nodeKlug from './nodes/klug.png';
@@ -227,6 +229,9 @@ export const chainLogos = Object.entries({
   'Kusama CC2': chainKusama,
   'Kusama CC3': chainKusama,
   'Kylin Testnet': nodeKylin,
+  Kabocha: chainKabocha, // Kabocha area here 
+  'Kabocha Parachain': nodeKabocha,
+  'Kabocha Parachain Testnet (Pumpkin)': nodeKabocha,
   Litentry: nodeLitentry,
   'Loom Network Local': nodeLoomNetwork,
   LoomNetwork: nodeLoomNetwork,

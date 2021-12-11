@@ -8,7 +8,7 @@ import { createCustom, createDev, createOwn } from './development';
 import { createProduction } from './production';
 import { createKusamaRelay, createPolkadotRelay } from './productionRelays';
 import { createTesting } from './testing';
-import { createRococoRelay, createWestendRelay } from './testingRelays';
+import { createRococoRelay, createWestendRelay, createPopArtRelay } from './testingRelays';
 
 export { CUSTOM_ENDPOINT_KEY } from './development';
 
@@ -35,11 +35,19 @@ export function createWsEndpoints (t: TFunction, firstOnly = false, withSort = t
     {
       isDisabled: false,
       isHeader: true,
+      text: t('rpc.header.pop-art.relay', 'Test Pop-Art & parachains', { ns: 'apps-config' }),
+      textBy: '',
+      value: ''
+    },
+    ...createPopArtRelay(t, firstOnly, withSort),
+    {
+      isDisabled: false,
+      isHeader: true,
       isSpaced: true,
       text: t('rpc.header.westend.relay', 'Test Westend & parachains', { ns: 'apps-config' }),
       textBy: '',
       value: ''
-    },
+    },  
     ...createWestendRelay(t, firstOnly, withSort),
     {
       isDisabled: false,

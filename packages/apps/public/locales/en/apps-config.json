@@ -16,6 +16,7 @@
   "rpc.header.polkadot.relay": "Polkadot & parachains",
   "rpc.header.rococo.relay": "Test Rococo & parachains",
   "rpc.header.test": "Test networks",
+  "rpc.header.pop-art.relay": "Test Pop-Art & parachains",  
   "rpc.header.westend.relay": "Test Westend & parachains",
   "rpc.hosted.by": "hosted by {{host}}",
   "rpc.hosted.via": "via {{host}}",
