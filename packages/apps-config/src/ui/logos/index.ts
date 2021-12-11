@@ -97,6 +97,7 @@ import nodeKilt from './nodes/kilt.png';
 import nodeKlug from './nodes/klug.png';
 import nodeKonomi from './nodes/konomi.png';
 import nodeKulupu from './nodes/kulupu.svg';
+import nodeKusari from './nodes/kusari.svg';
 import nodeKylin from './nodes/kylin.png';
 import nodeLaminar from './nodes/laminar-circle.svg';
 import nodeLitentry from './nodes/litentry.png';
@@ -228,6 +229,7 @@ export const chainLogos = Object.entries({
   'Kusama CC1': chainKusama,
   'Kusama CC2': chainKusama,
   'Kusama CC3': chainKusama,
+  kusari: nodeKusari,
   'Kylin Testnet': nodeKylin,
   Kabocha: chainKabocha, // Kabocha area here 
   'Kabocha Parachain': nodeKabocha,
@@ -281,6 +283,7 @@ export const chainLogos = Object.entries({
   Rococo: chainRococo,
   Shiden: chainShiden,
   SingLavender: nodeSingLavender,
+  SORA: nodeSora,
   Spanner: chainSpanner,
   Statemine: nodeStatemine,
   'Statemine Test': nodeStatemine,
@@ -340,6 +343,7 @@ export const nodeLogos = Object.entries({
   'BitCountry Node': nodeBitCountry,
   'Calamari Parachain Collator': nodeCalamari,
   'Canvas Node': nodeCanvas,
+  Centrifuge: nodeCentrifuge,
   'centrifuge chain': nodeCentrifuge,
   'Centrifuge Chain Node': nodeCentrifuge,
   'ChainX Node': nodeChainx,
@@ -382,6 +386,7 @@ export const nodeLogos = Object.entries({
   'Klug Dossier Node': nodeKlug,
   'Kpron Collator': nodeApron,
   kulupu: nodeKulupu,
+  kusari: nodeKusari,
   'Kylin Node': nodeKylin,
   'Laminar Node': nodeLaminar,
   Litentry: nodeLitentry,
@@ -558,6 +563,7 @@ export const namedLogos: Record<string, unknown> = {
   kpron: nodeApron,
   kulupu: nodeKulupu,
   kusama: chainKusama,
+  kusari: nodeKusari,
   kylin: nodeKylin,
   laminar: nodeLaminar,
   litentry: nodeLitentry,
@@ -655,7 +661,7 @@ export const namedLogos: Record<string, unknown> = {
   shiden: chainShiden,
   singLavender: nodeSingLavender,
   snakenet: chainSnakenet,
-  'sora-substrate': nodeSora,
+  sora: nodeSora,
   spanner: chainSpanner,
   stafi: nodeStafi,
   statemine: nodeStatemine,
