@@ -1,4 +1,4 @@
-// Copyright 2017-2021 @polkadot/apps-config authors & contributors
+// Copyright 2017-2022 @polkadot/apps-config authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type { TFunction } from 'i18next';
@@ -58,6 +58,13 @@ export function createProduction (t: TFunction, firstOnly: boolean, withSort: bo
       }
     },
     {
+      info: 'competitors-club',
+      text: t('rpc.prod.competitors-club', 'Competitors Club', { ns: 'apps-config' }),
+      providers: {
+        'Competitors Club': 'wss://node0.competitors.club/wss'
+      }
+    },
+    {
       info: 'crown-sterling',
       text: t('rpc.prod.crown-sterling', 'Crown Sterling', { ns: 'apps-config' }),
       providers: {
@@ -68,7 +75,8 @@ export function createProduction (t: TFunction, firstOnly: boolean, withSort: bo
       info: 'crust',
       text: t('rpc.prod.crust', 'Crust Network', { ns: 'apps-config' }),
       providers: {
-        'Crust Network': 'wss://rpc.crust.network'
+        'Crust Network': 'wss://rpc.crust.network',
+        OnFinality: 'wss://crust.api.onfinality.io/public-ws'
       }
     },
     {
@@ -82,7 +90,9 @@ export function createProduction (t: TFunction, firstOnly: boolean, withSort: bo
       info: 'crab',
       text: t('rpc.prod.crab', 'Darwinia Crab', { ns: 'apps-config' }),
       providers: {
-        'Darwinia Network': 'wss://crab-rpc.darwinia.network'
+        'Darwinia Network': 'wss://crab-rpc.darwinia.network',
+        Dwellir: 'wss://darwiniacrab-rpc.dwellir.com',
+        OnFinality: 'wss://darwinia-crab.api.onfinality.io/public-ws'
       }
     },
     {
@@ -103,6 +113,7 @@ export function createProduction (t: TFunction, firstOnly: boolean, withSort: bo
     },
     {
       info: 'efinity',
+      isDisabled: true, // https://github.com/polkadot-js/apps/pull/6761
       text: t('rpc.prod.efinity', 'Efinity', { ns: 'apps-config' }),
       providers: {
         Efinity: 'wss://rpc.efinity.io'
@@ -143,7 +154,8 @@ export function createProduction (t: TFunction, firstOnly: boolean, withSort: bo
       info: 'integritee',
       text: t('rpc.prod.integritee', 'Integritee Network', { ns: 'apps-config' }),
       providers: {
-        Integritee: 'wss://api.solo.integritee.io'
+        Integritee: 'wss://api.solo.integritee.io',
+        OnFinality: 'wss://integritee.api.onfinality.io/public-ws'
       }
     },
     {
@@ -187,7 +199,8 @@ export function createProduction (t: TFunction, firstOnly: boolean, withSort: bo
       info: 'nodle',
       text: t('rpc.prod.nodle-main', 'Nodle', { ns: 'apps-config' }),
       providers: {
-        Nodle: 'wss://main3.nodleprotocol.io'
+        Nodle: 'wss://main3.nodleprotocol.io',
+        OnFinality: 'wss://nodle.api.onfinality.io/public-ws'
         // Pinknode: 'wss://rpc.pinknode.io/nodle/explorer' // https://github.com/polkadot-js/apps/issues/5721
       }
     },
@@ -221,9 +234,17 @@ export function createProduction (t: TFunction, firstOnly: boolean, withSort: bo
     },
     {
       info: 'robonomics',
+      isDisabled: true, // https://github.com/polkadot-js/apps/pull/6761
       text: t('rpc.prod.robonomics', 'Robonomics', { ns: 'apps-config' }),
       providers: {
         Airalab: 'wss://kusama.rpc.robonomics.network/'
+      }
+    },
+    {
+      info: 'sherpax',
+      text: t('rpc.prod.sherpax', 'SherpaX', { ns: 'apps-config' }),
+      providers: {
+        ChainX: 'wss://mainnet.sherpax.io'
       }
     },
     {
@@ -251,8 +272,7 @@ export function createProduction (t: TFunction, firstOnly: boolean, withSort: bo
       isDisabled: true, // Cannot find type ChainId
       text: t('rpc.prod.stafi', 'Stafi', { ns: 'apps-config' }),
       providers: {
-        'Stafi Foundation': 'wss://mainnet-rpc.stafi.io',
-        'Patract Elara': 'wss://pub.elara.patract.io/stafi'
+        'Stafi Foundation': 'wss://mainnet-rpc.stafi.io'
       }
     },
     {
@@ -266,8 +286,14 @@ export function createProduction (t: TFunction, firstOnly: boolean, withSort: bo
       info: 'subsocial',
       text: t('rpc.prod.subsocial', 'Subsocial', { ns: 'apps-config' }),
       providers: {
-        DappForce: 'wss://rpc.subsocial.network',
-        OnFinality: 'wss://subsocial.api.onfinality.io/public-ws'
+        DappForce: 'wss://rpc.subsocial.network'
+      }
+    },
+    {
+      info: 'swapdex',
+      text: t('rpc.prod.swapdex', 'Swapdex', { ns: 'apps-config' }),
+      providers: {
+        Swapdex: 'wss://ws.swapdex.network'
       }
     },
     {

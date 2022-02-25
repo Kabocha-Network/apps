@@ -1,4 +1,4 @@
-// Copyright 2017-2021 @polkadot/apps-routing authors & contributors
+// Copyright 2017-2022 @polkadot/apps-routing authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type { TFunction } from 'i18next';
@@ -15,6 +15,7 @@ import council from './council';
 import democracy from './democracy';
 import explorer from './explorer';
 import extrinsics from './extrinsics';
+import files from './files';
 import gilt from './gilt';
 import js from './js';
 import membership from './membership';
@@ -59,6 +60,7 @@ export default function create (t: TFunction): Routes {
     rpc(t),
     signing(t),
     sudo(t),
+    files(t),
     js(t),
     settings(t)
   ];
