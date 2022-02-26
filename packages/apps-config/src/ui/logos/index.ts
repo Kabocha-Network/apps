@@ -32,6 +32,7 @@ import chainMangata from './chains/mangata.png';
 import chainMoonsamaDevelopment from './chains/moonsama.png';
 import chainOpal from './chains/opal-logo.png';
 import chainParallel from './chains/parallel.svg';
+import chainPopArt from './chains/pop.svg';
 import chainComposable from './chains/picasso.svg';
 import chainQuartz from './chains/quartz.png';
 import chainRococo from './chains/rococo.svg';
@@ -99,7 +100,6 @@ import nodeIntegritee from './nodes/integritee.svg';
 import nodeInterBTC from './nodes/interlay.svg';
 import nodeIpse from './nodes/ipse.png';
 import nodeJupiter from './nodes/jupiter.svg';
-import nodeKabocha from './nodes/kabocha.svg';
 import nodeKhala from './nodes/khala.svg';
 import nodeKilt from './nodes/kilt.png';
 import nodeKlug from './nodes/klug.png';
@@ -232,6 +232,9 @@ export const chainLogos = Object.entries({
   IpseTestnet: nodeIpse,
   'Jupiter A1': nodeJupiter,
   'Jupiter PC1': nodeJupiter,
+  Kabocha: chainKabocha, // Kabocha area here 
+  'Kabocha Soupcan': chainKabocha,
+  'Soupcan': chainKabocha,
   Karura: chainKarura,
   KICO: chainKico,
   KILT: nodeKilt,
@@ -248,9 +251,6 @@ export const chainLogos = Object.entries({
   'Kusama CC3': chainKusama,
   kusari: nodeKusari,
   'Kylin Testnet': nodeKylin,
-  Kabocha: chainKabocha, // Kabocha area here 
-  'Kabocha Parachain': nodeKabocha,
-  'Kabocha Parachain Testnet (Pumpkin)': nodeKabocha,
   Litentry: nodeLitentry,
   Litmus: nodeLitmus,
   'Loom Network Local': nodeLoomNetwork,
@@ -301,6 +301,8 @@ export const chainLogos = Object.entries({
   'ReAlis Network': nodeRealis,
   'RioChain CC-1': nodeRiochain,
   'RioChain Staging': nodeRiochain,
+  PopArt: chainPopArt,
+  'Pop-Art Rococo Staging Testnet':chainPopArt,
   Robonomics: nodeRobonomics,
   Rococo: chainRococo,
   Sherpax: nodeSherpax,
@@ -407,6 +409,9 @@ export const nodeLogos = Object.entries({
   'Integritee Node': nodeIntegritee,
   Interlay: chainInterlay,
   IpseTestnet: nodeIpse,
+  Kabocha: chainKabocha, // Kabocha area here 
+  'Kabocha Soupcan': chainKabocha,
+  'Soupcan': chainKabocha,
   Khala: nodeKhala,
   'Khala Node': nodeKhala,
   KICO: chainKico,
@@ -468,6 +473,9 @@ export const nodeLogos = Object.entries({
   'ReAlis Network': nodeRealis,
   'Rio Defi Chain Node': nodeRiochain,
   'RioChain Staging': nodeRiochain,
+  PopArt: chainPopArt,
+  'Pop-Art': chainPopArt,
+  'Pop-Art Rococo Staging Testnet':chainPopArt,
   robonomics: nodeRobonomics,
   Sakura: nodeSakura,
   Shadow: nodeShadow,
@@ -592,6 +600,7 @@ export const namedLogos: Record<string, unknown> = {
   interlay: chainInterlay,
   ipse: nodeIpse,
   jupiter: nodeJupiter,
+  kabocha: chainKabocha,
   karura: chainKarura,
   khala: nodeKhala,
   kico: chainKico,
@@ -638,6 +647,9 @@ export const namedLogos: Record<string, unknown> = {
   polkasmith: nodePolkaSmith,
   polymesh: nodePolymesh,
   pontem: nodePontem,
+  popart: chainPopArt,
+  'PopArt': chainPopArt,
+  'Pop-Art Rococo Staging Testnet':chainPopArt,
   prism: nodePrism,
   quartz: nodeQuartz,
   realis: nodeRealis,

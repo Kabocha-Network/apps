@@ -17,13 +17,13 @@ import { POPART_GENESIS } from '../api/constants';
 // Based on history, this will expand so keep it as a singular chunk
 export function createPopArt (t: TFunction): EndpointOption {
   return {
-    dnslink: 'pop-art',
+    dnslink: 'popart',
     genesisHash: POPART_GENESIS,
-    info: 'pop-art',
-    text: t('rpc.pop-art', 'Pop-Art', { ns: 'apps-config' }),
+    info: 'popart',
+    text: t('rpc.popart', 'PopArt', { ns: 'apps-config' }),
     providers: {
-      Decentration:'wss://pop-art-rpc.decentration.org', 
-      Subverse:'wss://pop-art-rpc.subverse.network', 
+      JelliedOwl:'wss://popart1.jelliedowl.com', 
+     // Subverse:'wss://pop-art-rpc.subverse.network', 
       //Parity: 'wss://westend-rpc.polkadot.io',
       //'Patract Elara': 'wss://pub.elara.patract.io/westend',
       //OnFinality: 'wss://westend.api.onfinality.io/public-ws',
@@ -37,14 +37,15 @@ export function createPopArt (t: TFunction): EndpointOption {
       // ...
       // (2) common good, leave as second group
       {
-        info: 'pop-art',
-        paraId: 1000,
-        text: t('rpc.pop-art.shell', 'Popmint', { ns: 'apps-config' }),
+        info: 'kabocha',
+        homepage: 'https://kabocha.network',
+        paraId: 2007,
+        text: t('rpc.popart.soupcan', 'Kabocha Soupcan', { ns: 'apps-config' }),
         providers: {
-          Decentration: 'wss://popmint-rpc.decentration.org',
+          JelliedOwl: 'wss://soupcan1.jelliedowl.com',
           
-          Parity: 'wss://westmint-rpc.polkadot.io',
-          'Patract Elara': 'wss://pub.elara.patract.io/westmint'
+          // Parity: 'wss://westmint-rpc.polkadot.io',
+          // 'Patract Elara': 'wss://pub.elara.patract.io/westmint'
         },
         teleport: [-1]
       },
@@ -52,26 +53,26 @@ export function createPopArt (t: TFunction): EndpointOption {
       //
       // NOTE: Added alphabetical based on chain name
      
-      {
-        info: 'edgeware',
-        isUnreachable: true, // https://github.com/polkadot-js/apps/issues/
-        homepage: 'https://edgewa.re',
-        paraId: 2001,
-        text: t('rpc.pop-art.edgeware', 'Edgeware EVM Parachain Testnet', { ns: 'apps-config' }),
-        providers: {
-          Interlay: 'wss://edgeware-testnet-parachain.subverse.network'
-        }
-      },
-      {
-        info: 'kabocha',
-        isUnreachable: true, // https://github.com/polkadot-js/apps/issues/
-        homepage: 'https://kabocha.network',
-        paraId: 2000,
-        text: t('rpc.pop-art.kabocha', 'Kabocha Pumpkin Testnet', { ns: 'apps-config' }),
-        providers: {
-          Decentration: 'wss://pumpkin-testnet.kabocha.network'
-        }
-      }
+      // {
+      //   info: 'edgeware',
+      //   isUnreachable: true, // https://github.com/polkadot-js/apps/issues/
+      //   homepage: 'https://edgewa.re',
+      //   paraId: 2001,
+      //   text: t('rpc.pop-art.edgeware', 'Edgeware EVM Parachain Testnet', { ns: 'apps-config' }),
+      //   providers: {
+      //     Interlay: 'wss://edgeware-testnet-parachain.subverse.network'
+      //   }
+      // },
+      // {
+      //   info: 'kabocha',
+      //   isUnreachable: true, // https://github.com/polkadot-js/apps/issues/
+      //   homepage: 'https://kabocha.network',
+      //   paraId: 2007,
+      //   text: t('rpc.pop-art.kabocha', 'Kabocha Pumpkin Testnet', { ns: 'apps-config' }),
+      //   providers: {
+      //     Decentration: 'wss://pumpkin-testnet.kabocha.network'
+      //   }
+      // }
     ]
   };
 }

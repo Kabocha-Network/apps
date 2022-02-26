@@ -12,7 +12,7 @@ import { sanitize } from './util';
 const emptyColor = '#99999';
 
 // based on chain name
-// alphabetical
+// alphabetical 
 const chainSherpax = '#6bbee8';
 const chainAcala = '#645AFF';
 const chainAjuna = 'linear-gradient(135deg, #0e0c14, #12203b, #1f3451)';
@@ -51,6 +51,8 @@ const chainHydrate = '#000000';
 const chainInterbtc = '#1a0a2d';
 const chainInterlay = '#3E96FF';
 const chainIpse = '#08a1e8';
+// const chainKabocha = 'repeating-radial-gradient(black, yellow 5px)';https://c.tenor.com/DPGJgNDVErgAAAAM/torus-vortex-spiral.gif
+const chainKabocha = 'url(https://c.tenor.com/DPGJgNDVErgAAAAM/torus-vortex-spiral.gif) repeat'
 const chainKarura = '#ff4c3b';
 const chainKhala = '#03f3f3';
 const chainKintsugi = '#1a0a2d';
@@ -89,6 +91,9 @@ const chainLitmus = '#6822fb';
 const chainMybank = '#282736';
 const chainOpal = '#3B9C9D';
 const chainPichiu = '#ed007e';
+// const chainPopArt = 'repeating-radial-gradient(black, red 5px)';
+const chainPopArt = 'linear-gradient(#ff2626, #a40404)';
+
 const chainQuartz = '#FF4D6A';
 const chainRocco = '#6f36dc';
 const chainRoccoMandala = '#173DC9';
@@ -279,6 +284,8 @@ export const chainColors: Record<string, string> = Object.entries({
   IpseTestnet: chainIpse,
   'Jupiter A1': chainJupiter,
   'Jupiter PC1': chainJupiter,
+  Kabocha: chainKabocha,
+  'Kabocha Soupcan': chainKabocha,
   Karura: chainKarura,
   Khala: chainKhala,
   KICO: chainKico,
@@ -349,6 +356,8 @@ export const chainColors: Record<string, string> = Object.entries({
   'Prism Testnet': chainPrism,
   'QUARTZ by UNIQUE': chainQuartz,
   'ReAlis Network': nodeRealis,
+  PopArt: chainPopArt,
+  'Pop-Art Rococo Staging Testnet': chainPopArt,
   RILT: chainKiltRilt,
   'RioChain CC-1': chainRiochain,
   'Riochain Staging': chainRiochain,

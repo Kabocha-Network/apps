@@ -10,11 +10,21 @@ import { createKusamaRelay, createPolkadotRelay } from './productionRelays';
 import { createTesting } from './testing';
 import { createRococoRelay, createWestendRelay, createPopArtRelay } from './testingRelays';
 
+
 export { CUSTOM_ENDPOINT_KEY } from './development';
 
 export function createWsEndpoints (t: TFunction, firstOnly = false, withSort = true): LinkOption[] {
   return [
     ...createCustom(t),
+    
+    {
+      isDisabled: false,
+      isHeader: true,
+      text: t('rpc.header.popart.relay', 'Test Pop-Art & parachains', { ns: 'apps-config' }),
+      textBy: '',
+      value: ''
+    },
+    ...createPopArtRelay(t, firstOnly, withSort),
     {
       isDisabled: false,
       isHeader: true,
@@ -32,14 +42,7 @@ export function createWsEndpoints (t: TFunction, firstOnly = false, withSort = t
       value: ''
     },
     ...createKusamaRelay(t, firstOnly, withSort),
-    {
-      isDisabled: false,
-      isHeader: true,
-      text: t('rpc.header.pop-art.relay', 'Test Pop-Art & parachains', { ns: 'apps-config' }),
-      textBy: '',
-      value: ''
-    },
-    ...createPopArtRelay(t, firstOnly, withSort),
+    
     {
       isDisabled: false,
       isHeader: true,
