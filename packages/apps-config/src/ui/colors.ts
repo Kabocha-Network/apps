@@ -286,6 +286,7 @@ export const chainColors: Record<string, string> = Object.entries({
   'Jupiter PC1': chainJupiter,
   Kabocha: chainKabocha,
   'Kabocha Soupcan': chainKabocha,
+  'Kabocha Soupcan 🎃 🥫': chainKabocha,
   Karura: chainKarura,
   Khala: chainKhala,
   KICO: chainKico,
