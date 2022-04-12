@@ -360,6 +360,7 @@ export const chainColors: Record<string, string> = Object.entries({
   'ReAlis Network': nodeRealis,
   PopArt: chainPopArt,
   'Pop-Art Rococo Staging Testnet': chainPopArt,
+  'Pop-Art Rococo Andy Testnet': chainPopArt,
   RILT: chainKiltRilt,
   'RioChain CC-1': chainRiochain,
   'Riochain Staging': chainRiochain,

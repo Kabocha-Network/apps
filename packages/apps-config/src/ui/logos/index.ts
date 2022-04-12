@@ -304,6 +304,7 @@ export const chainLogos = Object.entries({
   'RioChain Staging': nodeRiochain,
   PopArt: chainPopArt,
   'Pop-Art Rococo Staging Testnet':chainPopArt,
+  'Pop-Art Rococo Andy Testnet':chainPopArt, 
   Robonomics: nodeRobonomics,
   Rococo: chainRococo,
   Sherpax: nodeSherpax,
