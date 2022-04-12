@@ -1,5 +1,147 @@
 # CHANGELOG
 
+## 0.112.1 Apr 11, 2022
+
+Contributed:
+
+- Update Centrifuge parachain information (Thanks to https://github.com/mikiquantum)
+- Update Centrifuge endpoints (Thanks to https://github.com/mikiquantum)
+- Update Polkadex information (Thanks to https://github.com/Gauthamastro)
+- Add information for Creditcoin (Thanks to https://github.com/MrAusnadian)
+- Add Pangolin Rococo parachain (Thanks to https://github.com/JayJay1024)
+- Add Dwellir RPC for Zeitgeist (Thanks to https://github.com/Ank4n)
+- Change Equilibrium Polkadot providers (Thanks to https://github.com/VladSemenik)
+- Enable Turning endpoints (Thanks to https://github.com/irsal)
+- Update Automata type definitions (Thanks to https://github.com/RyuH1)
+- Update Litentry Rococo paraId (Thanks to https://github.com/Kailai-Wang)
+- Add RadiumBlock as a Kusama provider (Thanks to https://github.com/radiumb)
+- Fix Subsocial author extraction on genesis (Thanks to https://github.com/1devNdogs)
+- Add Nodle on Rococo (Thanks to https://github.com/ETeissonniere)
+
+Changes:
+
+- Pass through min commission (remove extra queries)
+- Adjust light-client connection (don't break UI on failures)
+- Consolidate rebag buttons into single
+- Adjust `useTxBatch` hook parameters
+- Remove `i18next` dependency from `@polkadot/apps-config`
+- Disable all unreachable endpoints
+- Output commonjs files under the `cjs/**` root
+
+
+## 0.111.1 Apr 4, 2022
+
+Contributed:
+
+- Add Copy button in accounts sidebar (Thanks to https://github.com/gilles437)
+- OnFinality endpoint for Iterlay (Thanks to https://github.com/banananeko)
+- OnFinality endpoint for Polkadex (Thanks to https://github.com/banananeko)
+- Fix KICO incorrectly referring to OnFinality (Thanks to https://github.com/banananeko)
+- Add Joystream Olympia testnet (Thanks to https://github.com/Lezek123)
+- Add Dwellir endpoint for Centrifuge & Nodle (Thanks to https://github.com/Maharacha)
+- Updata paraId for Rococo Spreehaven (Thanks to https://github.com/ayushmishra2005)
+- Add Rococo Integretee parachain (Thanks to https://github.com/mosonyi)
+- Add Rococo Litentry parachain (Thanks to https://github.com/Kailai-Wang)
+- Add Kusama InvArch parachain (Thanks to https://github.com/arrudagates)
+- Add Kusama Listen parachain (Thanks to https://github.com/JimYam)
+- Add Kusama Tanganika information (Thanks to https://github.com/ayushmishra2005)
+- Add Kusama Dora Factory parachain (Thanks to https://github.com/tinydjp)
+- Adjust Phala metadata (Thanks to https://github.com/krhougs)
+- Adjust Totem endpoints, colors & logo (Thanks to https://github.com/chrisdcosta)
+- Updata ss58prefix description for u16 fields (Thanks to https://github.com/chrisdcosta)
+- Explicit types package for Mangata (Thanks to https://github.com/mateuszaaa)
+- Fix conviction check is direct delegation (Thanks to https://github.com/JayJay1024)
+- Add bagsList overview description (Thanks to https://github.com/DrW3RK)
+
+Changes:
+
+- Make support for `bagsList` visible
+- Preliminary support for nomination pools
+- Don't display expanded for events with no data
+- Extract `DispatchError` on incomplete transactions
+- Adjust `VoteThreshold` rendering without `instanceof`
+- Add explicit connect for Substrate Connect provider (as per latest API)
+- Don't explicitly shorten content, rely on browser functionality only
+- Allow for Node 17 usage (Use global xxhash64 in webpack config)
+- Language changes for vanity generation text
+- Adjust length input for tip proposals
+- Fix crash on parachains display when groups change
+- Run unreachable endpoint detection in series
+- Additional checks for invalid provider & chain names
+- Disable unreachable endpoints
+
+
+## 0.110.1 Mar 21, 2022
+
+Contributed:
+
+- Add page for NFT support (Thanks to https://github.com/jsidorenko)
+- Allow cowdloan dissolve by anybody (Thanks to https://github.com/shawntabrizi)
+- Enable Encointer as Rococo transporter (Thanks to https://github.com/brenzi)
+- Add Turing network to Kusama (Thanks to https://github.com/irsal)
+- Update Kusari and Swapdex types (Thanks to https://github.com/masterdubs)
+- Update OnFinality endpoint for Nodle (Thanks to https://github.com/banananeko)
+- Add support for KodaDot from accounts (Thanks to https://github.com/preschian)
+- Correct link for Kintsugi for Subsquare (Thanks to https://github.com/wliyongfeng)
+- Add Basilik to Rococo (Thanks to https://github.com/lumir-mrkva)
+- Add types for Kerria, Vanilla testnet (Thanks to https://github.com/GopherJ)
+
+Changes:
+
+- Adjust display for successful transactions with warnings
+- Add `useBlockInterval` re-usable hook
+- Optimize asset list retrieval (using events)
+- Perform paraApi dosconnects directly on the provider
+- Adjust display of active totals from Ledger (optional field)
+- Disable unreachable endpoints
+
+
+## 0.109.1 Mar 14, 2022
+
+Contributed:
+
+- Add DataHighway Spreehaven on Rococo (Thanks to https://github.com/ayushmishra2005)
+- Add MiniX (Thanks to https://github.com/hqwangningbo)
+- Enable HydraX parachain (Thanks to https://github.com/lumir-mrkva)
+- Enable Centrifuge parachain (Thanks to https://github.com/mikiquantum)
+- Enable Unique parachain (Thanks to https://github.com/gregzaitsev)
+- Dwellir RPCs for Statemint, Statemine, Westmint (Thanks to https://github.com/Maharacha)
+- Update Nodle RPCs (Thanks to https://github.com/ETeissonniere)
+
+Changes:
+
+- Only disable fast-track on super majority (aligns with Substrate)
+- Display active-chilled validators (only on min commission chains)
+- Show hint around non-available Ledger support on FF
+- Adjust parachain displays for non-active
+
+
+## 0.108.1 Mar 7, 2022
+
+Contributed:
+
+- Adjust filtering options for staking targets (Thanks to https://github.com/xnorly)
+- Language adjustments on additional funds bonded (Thanks to https://github.com/xnorly)
+- Add Dwellir endpoints for Acala and Karura (Thanks to https://github.com/Maharacha)
+- Add Dwellir endpoints for tar and Shiden (Thanks to https://github.com/Maharacha)
+- Add additional endpoints for Neumann (Thanks to https://github.com/irsal)
+- Updata Rocfinity paraId (Thanks to https://github.com/stanly-johnson)
+- Add Subsquare links for Kintsugi (Thanks to https://github.com/wliyongfeng)
+- Remove Encointer Westend support (Thanks to https://github.com/mosonyi)
+- Add Encointer OnFinality endpoint (Thanks to https://github.com/mosonyi)
+- Adjust Westend Canvas coloring options (Thanks to https://github.com/statictype)
+
+Changes:
+
+- Support minimum on-chain comission requirements
+- Adjust block latency tab to contain event/extrinsic information
+- Fix `Vector` param handling
+- Adjust `useMap{Keys, Entries}` hook parameters
+- Remove all unreachable endpoints
+- Fix sub-identity editing display and updates
+- Adjust democracy fast-forward with FA 6 support
+
+
 ## 0.107.1 Feb 28, 2022
 
 Contributed:

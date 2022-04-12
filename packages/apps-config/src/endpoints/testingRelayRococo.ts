@@ -1,7 +1,7 @@
 // Copyright 2017-2022 @polkadot/apps-config authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import type { TFunction } from 'i18next';
+import type { TFunction } from '../types';
 import type { EndpointOption } from './types';
 
 import { ROCOCO_GENESIS } from '../api/constants';
@@ -22,7 +22,8 @@ export function createRococo (t: TFunction): EndpointOption {
     info: 'rococo',
     text: t('rpc.rococo', 'Rococo', { ns: 'apps-config' }),
     providers: {
-      Parity: 'wss://rococo-rpc.polkadot.io'
+      Parity: 'wss://rococo-rpc.polkadot.io',
+      'light client': 'light://substrate-connect/rococo'
       // OnFinality: 'wss://rococo.api.onfinality.io/public-ws', // After reset, node misses host functions
       // Pinknode: 'wss://rpc.pinknode.io/rococo/explorer' // After reset, syncs to old chain
       // 'Ares Protocol': 'wss://rococo.aresprotocol.com' // https://github.com/polkadot-js/apps/issues/5767
@@ -48,6 +49,16 @@ export function createRococo (t: TFunction): EndpointOption {
         },
         teleport: [-1]
       },
+      {
+        info: 'encointer',
+        homepage: 'https://encointer.org/',
+        paraId: 1003,
+        text: t('rpc.rococo.encointer', 'Encointer Lietaer', { ns: 'apps-config' }),
+        providers: {
+          'Encointer Association': 'wss://rococo.api.encointer.org'
+        },
+        teleport: [-1]
+      },
       // add any additional parachains here, alphabetical
       {
         info: 'rococoApron',
@@ -68,6 +79,14 @@ export function createRococo (t: TFunction): EndpointOption {
         }
       },
       {
+        info: 'rococoBasilisk',
+        paraId: 2090,
+        text: t('rpc.rococo.basilisk', 'Basilisk', { ns: 'apps-config' }),
+        providers: {
+          'Galactic Council': 'wss://rpc-01.basilisk-rococo.hydradx.io'
+        }
+      },
+      {
         info: 'rococoBifrost',
         isDisabled: true, // Rococo reset
         paraId: 1024,
@@ -83,6 +102,14 @@ export function createRococo (t: TFunction): EndpointOption {
         text: t('rpc.rococo.bitcountry', 'Bit.Country PC1', { ns: 'apps-config' }),
         providers: {
           BitCountry: 'wss://tewai-parachain.bit.country:9955'
+        }
+      },
+      {
+        info: 'rococoCatalyst',
+        paraId: 2031,
+        text: t('rpc.rococo.catalyst', 'Catalyst', { ns: 'apps-config' }),
+        providers: {
+          Centrifuge: 'wss://fullnode.catalyst.cntrfg.com'
         }
       },
       {
@@ -150,20 +177,28 @@ export function createRococo (t: TFunction): EndpointOption {
       },
       {
         info: 'rocfinity',
-        isDisabled: false,
-        paraId: 2110,
+        paraId: 2051,
         text: t('rpc.rococo.efinity.io', 'Efinity', { ns: 'apps-config' }),
         providers: {
           Efinity: 'wss://rpc.rococo.efinity.io'
         }
       },
       {
-        info: 'rococoEncointer',
-        isDisabled: true, // Rococo reset
-        paraId: 1862,
-        text: t('rpc.rococo.encointer', 'Encointer PC1', { ns: 'apps-config' }),
+        info: 'rococoIntegritee',
+        isDisabled: false,
+        paraId: 3002,
+        text: t('rpc.rococo.integritee', 'Integritee Network', { ns: 'apps-config' }),
         providers: {
-          Encointer: 'wss://rococo.encointer.org'
+          Integritee: 'wss://rococo.api.integritee.network'
+        }
+      },
+      {
+        info: 'rococoTinker',
+        isDisabled: false,
+        paraId: 2014,
+        text: t('rpc.rococo.tinker', 'InvArch Tinkernet', { ns: 'apps-config' }),
+        providers: {
+          OnFinality: 'wss://invarch-tinkernet.api.onfinality.io/public-ws'
         }
       },
       {
@@ -230,8 +265,16 @@ export function createRococo (t: TFunction): EndpointOption {
         }
       },
       {
-        info: 'rococoMoonsama',
+        info: 'rococoLitentry',
         isDisabled: false,
+        paraId: 2106,
+        text: t('rpc.rococo.litentry', 'Litentry', { ns: 'apps-config' }),
+        providers: {
+          Litentry: 'wss://rpc.rococo-parachain-sg.litentry.io'
+        }
+      },
+      {
+        info: 'rococoMoonsama',
         paraId: 2055,
         text: t('rpc.rococo.moonsama', 'Moonsama', { ns: 'apps-config' }),
         providers: {
@@ -239,8 +282,24 @@ export function createRococo (t: TFunction): EndpointOption {
         }
       },
       {
-        info: 'rococoKilt',
+        info: 'rococoNodle',
+        paraId: 2026,
+        text: t('rpc.rococo.nodle', 'Nodle', { ns: 'apps-config' }),
+        providers: {
+          OnFinality: 'wss://node-6913072722034561024.lh.onfinality.io/ws?apikey=84d77e2e-3793-4785-8908-5096cffea77a'
+        }
+      },
+      {
+        info: 'rococoPangolin',
         isDisabled: false,
+        paraId: 2105,
+        text: t('rpc.rococo.pangolin', 'Pangolin Parachain', { ns: 'apps-config' }),
+        providers: {
+          'Darwinia Network': 'wss://pangolin-parachain-rpc.darwinia.network'
+        }
+      },
+      {
+        info: 'rococoKilt',
         paraId: 2015,
         text: t('rpc.rococo.kilt', 'RILT', { ns: 'apps-config' }),
         providers: {
@@ -266,21 +325,20 @@ export function createRococo (t: TFunction): EndpointOption {
         }
       },
       {
+        info: 'rococoSpreehafen',
+        paraId: 2116,
+        text: t('rpc.rococo.spreehafen', 'Spreehafen', { ns: 'apps-config' }),
+        providers: {
+          DataHighway: 'wss://spreehafen.datahighway.com'
+        }
+      },
+      {
         info: 'rococoSingLavender',
         isDisabled: true, // Rococo reset
         paraId: 2104,
         text: t('rpc.rococo.singlavender', 'Lavender by SingNetwork', { ns: 'apps-config' }),
         providers: {
           SingNetwork: 'wss://rpc-lavender.singnetwork.io'
-        }
-      },
-      {
-        info: 'rococoLitentry',
-        isDisabled: true, // Rococo reset
-        paraId: 1984,
-        text: t('rpc.rocco.litentry', 'Litentry Rostock', { ns: 'apps-config' }),
-        providers: {
-          Litentry: 'wss://rococov1.litentry.io'
         }
       },
       {

@@ -1,7 +1,7 @@
 // Copyright 2017-2022 @polkadot/apps-config authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import type { TFunction } from 'i18next';
+import type { TFunction } from '../types';
 import type { EndpointOption } from './types';
 
 import { POLKADOT_GENESIS } from '../api/constants';
@@ -37,7 +37,8 @@ export function createPolkadot (t: TFunction): EndpointOption {
         text: t('rpc.polkadot.statemint', 'Statemint', { ns: 'apps-config' }),
         providers: {
           Parity: 'wss://statemint-rpc.polkadot.io',
-          OnFinality: 'wss://statemint.api.onfinality.io/public-ws'
+          OnFinality: 'wss://statemint.api.onfinality.io/public-ws',
+          Dwellir: 'wss://statemint-rpc.dwellir.com'
         }
       },
       /// (3) parachains with id, see Rococo (info here maps to the actual "named icon")
@@ -74,7 +75,8 @@ export function createPolkadot (t: TFunction): EndpointOption {
         text: t('rpc.polkadot.astar', 'Astar', { ns: 'apps-config' }),
         providers: {
           Astar: 'wss://rpc.astar.network',
-          OnFinality: 'wss://astar.api.onfinality.io/public-ws'
+          OnFinality: 'wss://astar.api.onfinality.io/public-ws',
+          Dwellir: 'wss://astar-rpc.dwellir.com'
         }
       },
       {
@@ -91,10 +93,10 @@ export function createPolkadot (t: TFunction): EndpointOption {
         info: 'centrifuge',
         homepage: 'https://centrifuge.io',
         paraId: 2031,
-        isUnreachable: true,
         text: t('rpc.polkadot.centrifuge', 'Centrifuge', { ns: 'apps-config' }),
         providers: {
-          Centrifuge: 'wss://fullnode.parachain.centrifuge.io'
+          Centrifuge: 'wss://fullnode.parachain.centrifuge.io',
+          OnFinality: 'wss://centrifuge-parachain.api.onfinality.io/public-ws'
         }
       },
       {
@@ -160,12 +162,11 @@ export function createPolkadot (t: TFunction): EndpointOption {
       },
       {
         info: 'equilibrium',
-        isUnreachable: true, // https://github.com/polkadot-js/apps/pull/6761
         homepage: 'https://equilibrium.io/',
         paraId: 2011,
         text: t('rpc.polkadot.equilibrium', 'Equilibrium', { ns: 'apps-config' }),
         providers: {
-          Equilibrium: 'wss://node.equilibrium.io'
+          Equilibrium: 'wss://node.pol.equilibrium.io/'
         }
       },
       {
@@ -182,7 +183,6 @@ export function createPolkadot (t: TFunction): EndpointOption {
         info: 'hydra',
         homepage: 'https://hydradx.io/',
         paraId: 2034,
-        isUnreachable: true, // waiting for onboarding
         text: t('rpc.polkadot.hydra', 'HydraDX', { ns: 'apps-config' }),
         providers: {
           'Galactic Council': 'wss://rpc-01.hydradx.io'
@@ -194,7 +194,17 @@ export function createPolkadot (t: TFunction): EndpointOption {
         paraId: 2032,
         text: t('rpc.polkadot.interlay', 'Interlay', { ns: 'apps-config' }),
         providers: {
-          'Kintsugi Labs': 'wss://api.interlay.io/parachain'
+          'Kintsugi Labs': 'wss://api.interlay.io/parachain',
+          OnFinality: 'wss://interlay.api.onfinality.io/public-ws'
+        }
+      },
+      {
+        info: 'kapex',
+        homepage: 'https://totemaccounting.com/',
+        paraId: 2007,
+        text: t('rpc.polkadot.kapex', 'Kapex', { ns: 'apps-config' }),
+        providers: {
+          Totem: 'wss://k-ui.kapex.network'
         }
       },
       {
@@ -233,11 +243,11 @@ export function createPolkadot (t: TFunction): EndpointOption {
       {
         info: 'nodle',
         homepage: 'https://nodle.com',
-        isUnreachable: true,
         paraId: 2026,
         text: t('rpc.polkadot.nodle', 'Nodle', { ns: 'apps-config' }),
         providers: {
-          Nodle: 'wss://rpc.nodle.com'
+          OnFinality: 'wss://nodle-parachain.api.onfinality.io/public-ws',
+          Dwellir: 'wss://eden-rpc.dwellir.com'
         }
       },
       {
@@ -253,7 +263,6 @@ export function createPolkadot (t: TFunction): EndpointOption {
       {
         info: 'phala',
         homepage: 'https://phala.network',
-        isUnreachable: true,
         paraId: 2035,
         text: t('rpc.polkadot.phala', 'Phala Network', { ns: 'apps-config' }),
         providers: {
@@ -263,10 +272,11 @@ export function createPolkadot (t: TFunction): EndpointOption {
       {
         info: 'polkadex',
         homepage: 'https://polkadex.trade/',
-        paraId: 2036,
+        paraId: 2040,
         text: t('rpc.polkadot.polkadex', 'Polkadex', { ns: 'apps-config' }),
         providers: {
-          'Polkadex Team': 'wss://mainnet.polkadex.trade/'
+          'Polkadex Team': 'wss://mainnet.polkadex.trade/',
+          OnFinality: 'wss://polkadex.api.onfinality.io/public-ws'
         }
       },
       {
@@ -287,6 +297,15 @@ export function createPolkadot (t: TFunction): EndpointOption {
         text: t('rpc.polkadot.subgame', 'SubGame Gamma', { ns: 'apps-config' }),
         providers: {
           SubGame: 'wss://gamma.subgame.org/'
+        }
+      },
+      {
+        info: 'unique',
+        homepage: 'https://unique.network/',
+        paraId: 2037,
+        text: t('ws.unique.network', 'Unique Network', { ns: 'apps-config' }),
+        providers: {
+          Unique: 'wss://ws.unique.network/'
         }
       }
     ]

@@ -3,6 +3,7 @@
 
 /* eslint sort-keys: ["error", "asc", { caseSensitive: false }] */
 
+import nodeBasiliskRococo from './logos/nodes/basilisk-rococo-bg.png';
 import { sanitize } from './util';
 
 // The mapping here is done on the actual chain name (system.chain RPC) or
@@ -24,6 +25,7 @@ const chainAutomata = '#EC7032';
 const chainAutomataContextFree = '#EC7032';
 const chainBitCountry = '#191a2e';
 const chainBitCountryPioneer = '#000000';
+const chainBasiliskTestnet = `url(${String(nodeBasiliskRococo)}) #000`;
 const chainBeastEave = '#900048';
 const chainCalamari = '#000000';
 const chainCoinversation = '#e6017a';
@@ -31,6 +33,8 @@ const chainCompetitorsClub = '#213830';
 const chainComposable = '#FF8500';
 const chainComposableFinance = '#861660';
 const chainCrab = '#7C30DD';
+const chainCreditcoin = '#2D353F';
+const chainCreditcoinTestnet = '#00DF83';
 const chainCrownSterling = '#13264b';
 const chainCrust = '#ff8812';
 const chainCrustMaxwell = '#2E333B';
@@ -38,6 +42,7 @@ const chainClover = 'linear-gradient(to right, #52ad75, #7cc773)';
 const chainChainx = '#F6C94A';
 const chainDarwinia = 'linear-gradient(-45deg, #FE3876 0%, #7C30DD 71%, #3A30DD 100%)';
 const chainDolphin = '#000000';
+const chainDorafactory = '#FF761C';
 const chainDotMog = '#020609';
 const chainEfinity = '#496ddb';
 const chainEquilibrium = '#1792ff';
@@ -58,17 +63,19 @@ const chainKhala = '#03f3f3';
 const chainKintsugi = '#1a0a2d';
 const chainKlug = '#000000';
 const chainKulupu = '#003366';
+const chainMinix = '#5152f7';
 const chainManta = '#2070a6';
-const chainMangata = '#ddf1f3';
+const chainMangata = '#030408';
 const chainMoonrock = '#3d1d5a';
 const chainMoonsama = '#000000';
 const chainNeumann = '#A8278C';
 const chainNFTMart = '#815287';
+const chainNodle = '#1ab394';
 const chainPangolin = '#5744ff';
 const chainPangoro = '#5745de';
 const chainParallel = '#ef18ac';
 const chainParami = '#ee06e2';
-const chainPhala = '#a7e300';
+const chainPhala = '#c6fa4c';
 const chainPhoenix = '#d42181';
 const chainPlasm = '#2096F3';
 const chainPolkadex = '#7C30DD';
@@ -84,8 +91,10 @@ const chainKiltPeregrine = `linear-gradient(45deg, ${chainKiltDev} 0%, ${chainKi
 const chainKiltRilt = `linear-gradient(45deg, ${chainKilt} 0%, ${chainKiltDev} 100%)`;
 const chainKonomi = '#007aff';
 const chainKusama = '#000000';
+const chainKusamaDataHighway = 'linear-gradient(-90deg, #9400D3 0%, #5A5CA9 50%, #00BFFF 100%)';
 const chainKusari = '#b8860b';
 const chainKylin = '#ed007e';
+const chainListen = '#FFAD0A';
 const chainLitentry = 'linear-gradient(45deg, #5cc27c 0%, #6de98f 100%)';
 const chainLitmus = '#6822fb';
 const chainMybank = '#282736';
@@ -116,6 +125,7 @@ const chainSnakenet = '#f653a2';
 const chainSora = '#2D2926';
 const chainSpanner = '#EC3D3D';
 const chainStandard = 'background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(42,170,244,1) 35%, rgba(10,10,10,1) 100%)';
+const chainTotem = 'linear-gradient(158deg, rgba(226,157,0,1) 0%, rgba(234,55,203,1) 100%)';
 const chainWestend = '#da68a7';
 const chainWhala = '#03f3f3';
 const chainGalois = '#000000';
@@ -128,7 +138,9 @@ const chainIdavoll = '#ff43ff';
 const chainSubDAO = 'linear-gradient(50deg, #F20092 0%, #FF4D5D 100%)';
 const chainSubsocial = '#b9018c';
 const chainSwapdex = '#E94082';
+const chainTinker = '#161616';
 const chainTrustBase = '#ff43aa';
+const chainTuring = '#A8278C';
 const chainUnitv = '#1452F0';
 const chainUnorthodox = 'radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(42,244,187,1) 35%, rgba(10,10,10,1) 100%)';
 const chainVln = '#33cc33';
@@ -160,7 +172,9 @@ const nodeGeek = '#4f46e5';
 const nodeHeiko = '#42d5de';
 const nodeIntegritee = '#658ea9';
 const nodeIpse = '#08a1e8';
+const nodeJoystream = '#4038FF';
 const nodeJupiter = '#7143ff';
+const nodeKabocha = '#f53485';
 const nodeKonomi = '#007aff';
 const nodeKpron = 'linear-gradient(45deg, #0099F7 0%, #2E49EB 100%)';
 const nodeKylin = '#ed007e';
@@ -234,6 +248,7 @@ export const chainColors: Record<string, string> = Object.entries({
   Astar: chainAstar,
   Automata: chainAutomata,
   'Automata ContextFree': chainAutomataContextFree,
+  'Basilisk testnet': chainBasiliskTestnet,
   'Beast Developer': chainBeastEave,
   bifrost: chainRoccoBifrost,
   'Bifrost Asgard CC4': chainRoccoBifrost,
@@ -244,13 +259,16 @@ export const chainColors: Record<string, string> = Object.entries({
   'Calamari Parachain Development': chainCalamari,
   'Calamari Parachain Local': chainCalamari,
   'Calamari Parachain Testnet': chainCalamari,
-  Canvas: chainRococoCanvas,
+  'Canvas on Rococo': chainRococoCanvas,
+  Centrifuge: nodeCentrifuge,
   ChainX: chainChainx,
   Clover: chainClover,
   Coinversation: chainCoinversation,
   'Competitors Club': chainCompetitorsClub,
   Composable: chainComposable,
   'Composable Finance': chainComposableFinance,
+  Creditcoin: chainCreditcoin,
+  'Creditcoin Testnet': chainCreditcoinTestnet,
   'Crown Sterling': chainCrownSterling,
   crust: chainCrust,
   'crust maxwell': chainCrustMaxwell,
@@ -259,11 +277,14 @@ export const chainColors: Record<string, string> = Object.entries({
   'Darwinia Crab': chainCrab,
   'Darwinia Crab Redirect': chainCrab,
   'Darwinia PC2': chainRoccoDarwinia,
-  DataHighway: chainRoccoDataHighway,
+  'DataHighway Spreehafen Rococo Parachain Testnet': chainRoccoDataHighway,
+  'DataHighway Tanganika Kusama Parachain': chainKusamaDataHighway,
   'Dolphin Testnet': chainDolphin,
+  'Dora Factory': chainDorafactory,
   'DOTMog.com NET': chainDotMog,
   Efinity: chainEfinity,
   Equilibrium: chainEquilibrium,
+  'Equilibrium parachain': chainEquilibrium,
   EquilibriumTestnet: chainGenshiro,
   'Fantour Development': chainFantour,
   Galital: chainGalital,
@@ -273,7 +294,7 @@ export const chainColors: Record<string, string> = Object.entries({
   'Genshiro Rococo Testnet': chainGenshiro,
   'Halongbay PC1': chainPolkaFoundry,
   hanonycash: chainHanonycash,
-  HydraDX: chainSnakenet,
+  HydraDX: chainHydrate,
   'HydraDX Hydrate': chainHydrate,
   'HydraDX Snakenet': chainSnakenet,
   'HydraDX Snakenet Gen2': chainSnakenet,
@@ -282,12 +303,14 @@ export const chainColors: Record<string, string> = Object.entries({
   InterBTC: chainInterbtc,
   'InterBTC Staging': chainInterbtc,
   Interlay: chainInterlay,
+  'InvArch Tinkernet': chainTinker,
   IpseTestnet: chainIpse,
   'Jupiter A1': chainJupiter,
   'Jupiter PC1': chainJupiter,
   Kabocha: chainKabocha,
   'Kabocha Soupcan': chainKabocha,
   'Kabocha Soupcan 🎃 🥫': chainKabocha,
+  Kapex: chainTotem,
   Karura: chainKarura,
   Khala: chainKhala,
   KICO: chainKico,
@@ -310,9 +333,13 @@ export const chainColors: Record<string, string> = Object.entries({
   kusari: chainKusari,
   'Kylin Testnet': chainKylin,
   'laminar turbulence pc1': chainRococoLaminar,
+  Lego: chainTotem,
+  'Listen Network': chainListen,
   Litentry: chainLitentry,
+  'Litentry-rococo': chainLitentry,
   Litmus: chainLitmus,
-  Mangata: chainMangata,
+  'Mangata Kusama Mainnet': chainMangata,
+  'Mangata Public Testnet': chainMangata,
   'Manta Parachain': chainManta,
   'Manta Parachain Development': chainManta,
   'Manta Parachain Local': chainManta,
@@ -320,6 +347,8 @@ export const chainColors: Record<string, string> = Object.entries({
   Mars: nodeAres,
   MathChain: nodeMathChain,
   'MathChain PC1': chainGalois,
+  Minix: chainMinix,
+  'Minix Testnet': chainMinix,
   'Moonbase Alpha': nodeMoonbase,
   'Moonbase Development Testnet': nodeMoonbase,
   'Moonbase Stage': nodeMoonbase,
@@ -332,17 +361,19 @@ export const chainColors: Record<string, string> = Object.entries({
   'Neumann Network': chainNeumann,
   'NFTMart Staging': chainNFTMart,
   'NFTMart Testnet': chainNFTMart,
+  'Nodle Parachain': chainNodle,
+  'Nodle Testing Parachain': chainNodle,
   Odyssey: nodeOdyssey,
   'Opal Node': chainOpal,
   'OriginTrail Parachain': nodeOriginTrail,
   'OriginTrail Parachain Testnet': nodeOriginTrail,
   Pangolin: chainPangolin,
+  'Pangolin Parachain': chainPangolin,
   Pangoro: chainPangoro,
   Parallel: chainParallel,
   'Parallel Heiko': chainHeiko,
   'Parami PC2': chainParami,
-  'Phala PC1': chainPhala,
-  'Phala PoC 4': chainPhala,
+  Phala: chainPhala,
   PHOENIX: chainPhoenix,
   'Pichiu Testnet': chainPichiu,
   'Pioneer Network': chainBitCountryPioneer,
@@ -393,11 +424,13 @@ export const chainColors: Record<string, string> = Object.entries({
   Track: chainRoccoTrack,
   Trick: chainRoccoTrick,
   'TrustBase PC1': chainTrustBase,
+  'Turing Network': chainTuring,
   'uni arts staging network': chainUniarts,
   'UniArts Mainnet': chainUniarts,
   'Unique Node': chainUnique,
   UNIT: chainUnitv,
   'VLN PC': chainVln,
+  Wapex: chainTotem,
   'Web3Games Plum': chainWeb3games,
   Westend: chainWestend,
   Westlake: chainWestlake,
@@ -425,11 +458,15 @@ export const nodeColors = Object.entries({
   'Bifrost Node': nodeBifrost,
   'Bifrost Stage Testnet': nodeBifrost,
   'Bit.Country Node': nodeBitCountry,
+  centrifuge: nodeCentrifuge,
   'centrifuge chain': nodeCentrifuge,
   'Centrifuge Chain Node': nodeCentrifuge,
   Coinversation: nodeCoinversation,
   'Competitors Club': nodeCompetitorsClub,
   'Crown Sterling': nodeCrownSterling,
+  'DataHighway Spreehafen Rococo Parachain Testnet': chainRoccoDataHighway,
+  'DataHighway Tanganika Kusama Parachain': chainKusamaDataHighway,
+  'Dora Factory': chainDorafactory,
   'DOTMog Node': nodeDotMog,
   'edgeware node': nodeEdgeware,
   Efinity: nodeEfinity,
@@ -442,14 +479,18 @@ export const nodeColors = Object.entries({
   GEEK: nodeGeek,
   'Integritee Collator': nodeIntegritee,
   'Integritee Node': nodeIntegritee,
+  'InvArch Tinkernet Node': chainTinker,
   IpseTestnet: nodeIpse,
+  'Joystream Node': nodeJoystream,
+  Kabocha: nodeKabocha,
   KICO: chainKico,
   'Klug Dossier Node': nodeKlug,
   'Konomi Collator': nodeKonomi,
   'Kpron Collator': nodeKpron,
   kusari: nodeKusari,
   'Kylin Parachain Collator': nodeKylin,
-  'Litentry Collator': nodeLitentry,
+  'Listen Network': chainListen,
+  'Litentry node': nodeLitentry,
   'Manta Collator': nodeManta,
   'Manta Node': nodeManta,
   MathChain: nodeMathChain,
@@ -462,6 +503,7 @@ export const nodeColors = Object.entries({
   'Opportunity Standalone Testnet': nodeOpportunity,
   'OriginTrail Parachain': nodeOriginTrail,
   Pangolin: nodePangolin,
+  'Pangolin Parachain': nodePangolin,
   Pangoro: nodePangoro,
   Parallel: nodeParallel,
   'Parallel Heiko': nodeHeiko,
