@@ -45,7 +45,7 @@ import chainMyriad from './chains/myriad.svg';
 import chainOpal from './chains/opal-logo.png';
 import chainOriginTrail from './chains/origintrail.png';
 import chainOriginTrailTestnet from './chains/origintrail-testnet.png';
-import chainPopArt from './chains/pop.'
+import chainPopArt from './chains/pop.svg'
 import chainParallel from './chains/parallel.svg';
 import chainPicasso from './chains/picasso.svg';
 import chainQuartz from './chains/quartz.png';

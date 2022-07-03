@@ -31,6 +31,6 @@ RUN apk add --no-cache bash; chmod +x env.sh
 COPY docker/nginx.conf /etc/nginx/nginx.conf
 COPY --from=builder /apps/packages/apps/build /usr/share/nginx/html
 
-EXPOSE 80
+EXPOSE 3002
 
 CMD ["/bin/bash", "-c", "/usr/share/nginx/html/env.sh && nginx -g \"daemon off;\""]

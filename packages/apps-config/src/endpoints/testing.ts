@@ -5,6 +5,9 @@ import type { EndpointOption } from './types';
 
 export * from './testingRelayRococo';
 export * from './testingRelayWestend';
+export * from './testingRelayPopArt';
+// export * from './testingRelays';
+
 
 /* eslint-disable sort-keys */
 

@@ -1,7 +1,6 @@
-// Copyright 2017-2021 @polkadot/apps-config authors & contributors
+// Copyright 2017-2022 @polkadot/apps-config authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import type { TFunction } from 'i18next';
 import type { EndpointOption } from './types';
 
 import { POPART_GENESIS } from '../api/constants';
@@ -12,15 +11,35 @@ import { POPART_GENESIS } from '../api/constants';
 // Polkadot) we try to keep this to live chains only, with RPCs hosted by the community/chain vendor
 //   info: The chain logo name as defined in ../ui/logos/index.ts in namedLogos (this also needs to align with @polkadot/networks)
 //   text: The text to display on the dropdown
-//   value: The actual hosted secure websocket endpoint
+//   providers: The actual hosted secure websocket endpoint
+//
+// IMPORTANT: Alphabetical based on text
+export const testParasPopArt: EndpointOption[] = [
+  {
+    info: 'kabocha',
+    homepage: 'https://kabocha.network',
+    paraId: 2008,
+    text: 'Kabocha Soupcan',
+    providers: {
+      JelliedOwl: 'wss://soupcan1.jelliedowl.com',
+      
+      // Parity: 'wss://westmint-rpc.polkadot.io',
+      // 'Patract Elara': 'wss://pub.elara.patract.io/westmint'
+    },
+    teleport: [-1]
+  }, 
+  
+];
 
-// Based on history, this will expand so keep it as a singular chunk
-export function createPopArt (t: TFunction): EndpointOption {
-  return {
+export const testParasPopArtCommon: EndpointOption[] = [
+ 
+];
+
+export const testRelayPopArt: EndpointOption = {
     dnslink: 'popart',
     genesisHash: POPART_GENESIS,
     info: 'popart',
-    text: t('rpc.popart', 'PopArt', { ns: 'apps-config' }),
+    text: 'PopArt',
     providers: {
       JelliedOwl:'wss://popart1.jelliedowl.com', 
      // Subverse:'wss://pop-art-rpc.subverse.network', 
@@ -31,48 +50,9 @@ export function createPopArt (t: TFunction): EndpointOption {
       //'light client': 'light://substrate-connect/westend'
       // 'NodeFactory(Vedran)': 'wss://westend.vedran.nodefactory.io/ws', // https://github.com/polkadot-js/apps/issues/5580
     },
-    teleport: [1000],
-    linked: [
-      // (1) system parachains (none available yet)
-      // ...
-      // (2) common good, leave as second group
-      {
-        info: 'kabocha',
-        homepage: 'https://kabocha.network',
-        paraId: 2007,
-        text: t('rpc.popart.soupcan', 'Kabocha Soupcan', { ns: 'apps-config' }),
-        providers: {
-          JelliedOwl: 'wss://soupcan1.jelliedowl.com',
-          
-          // Parity: 'wss://westmint-rpc.polkadot.io',
-          // 'Patract Elara': 'wss://pub.elara.patract.io/westmint'
-        },
-        teleport: [-1]
-      },
-      // (3) parachains with id, see Rococo (info here maps to the actual "named icon")
-      //
-      // NOTE: Added alphabetical based on chain name
-     
-      // {
-      //   info: 'edgeware',
-      //   isUnreachable: true, // https://github.com/polkadot-js/apps/issues/
-      //   homepage: 'https://edgewa.re',
-      //   paraId: 2001,
-      //   text: t('rpc.pop-art.edgeware', 'Edgeware EVM Parachain Testnet', { ns: 'apps-config' }),
-      //   providers: {
-      //     Interlay: 'wss://edgeware-testnet-parachain.subverse.network'
-      //   }
-      // },
-      // {
-      //   info: 'kabocha',
-      //   isUnreachable: true, // https://github.com/polkadot-js/apps/issues/
-      //   homepage: 'https://kabocha.network',
-      //   paraId: 2007,
-      //   text: t('rpc.pop-art.kabocha', 'Kabocha Pumpkin Testnet', { ns: 'apps-config' }),
-      //   providers: {
-      //     Decentration: 'wss://pumpkin-testnet.kabocha.network'
-      //   }
-      // }
-    ]
-  };
-}
+  teleport: [1000, 1002],
+  linked: [
+    ...testParasPopArtCommon,
+    ...testParasPopArt
+  ]
+};

@@ -10,10 +10,10 @@ import { createCustom, createDev, createOwn } from './development';
 import { createProductionEdgeware } from './productionEdgeware';
 // import { createKusamaRelay, createPolkadotRelay } from './productionRelays';
 // import { createTesting } from './testing';
-import { createPopArtRelay } from './testingRelays';
+// import { createPopArtRelay} from './testingRelays';
 
 import { prodChains, prodRelayKusama, prodRelayPolkadot } from './production';
-import { testChains, testRelayRococo, } from './testing';
+import { testChains, testRelayRococo, testRelayPopArt } from './testing';
 import { expandEndpoints } from './util';
 
 export { CUSTOM_ENDPOINT_KEY } from './development';
@@ -46,6 +46,8 @@ export function createWsEndpoints (t: TFunction = defaultT, firstOnly = false, w
       value: ''
     },
     ...expandEndpoints(t, [prodRelayKusama], firstOnly, withSort),
+
+
     {
       isDisabled: false,
       isHeader: true,
@@ -53,7 +55,7 @@ export function createWsEndpoints (t: TFunction = defaultT, firstOnly = false, w
       textBy: '',
       value: ''
     },
-    ...createPopArtRelay(t, firstOnly, withSort),
+    ...expandEndpoints(t, [testRelayPopArt], firstOnly, withSort),
     
     {
       isDisabled: false,
@@ -63,6 +65,7 @@ export function createWsEndpoints (t: TFunction = defaultT, firstOnly = false, w
       value: ''
     },
     ...expandEndpoints(t, [testRelayRococo], firstOnly, withSort),
+    
     {
       isDisabled: false,
       isHeader: true,
