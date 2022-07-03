@@ -6,14 +6,19 @@ import type { LinkOption } from './types';
 
 import { defaultT } from '../util';
 import { createCustom, createDev, createOwn } from './development';
-import { createProduction } from './production';
+// import { createProduction } from './production';
 import { createProductionEdgeware } from './productionEdgeware';
-import { createKusamaRelay, createPolkadotRelay } from './productionRelays';
-import { createTesting } from './testing';
-import { createRococoRelay, createWestendRelay, createPopArtRelay } from './testingRelays';
+// import { createKusamaRelay, createPolkadotRelay } from './productionRelays';
+// import { createTesting } from './testing';
+import { createPopArtRelay } from './testingRelays';
 
+import { prodChains, prodRelayKusama, prodRelayPolkadot } from './production';
+import { testChains, testRelayRococo, } from './testing';
+import { expandEndpoints } from './util';
 
 export { CUSTOM_ENDPOINT_KEY } from './development';
+export * from './production';
+export * from './testing';
 
 export function createWsEndpoints (t: TFunction = defaultT, firstOnly = false, withSort = true): LinkOption[] {
   return [
@@ -26,7 +31,21 @@ export function createWsEndpoints (t: TFunction = defaultT, firstOnly = false, w
       value: ''
     }, 
     ...createProductionEdgeware(t, firstOnly, withSort),
-    
+    {
+      isSpaced: true,
+      text: t('rpc.header.polkadot.relay', 'Polkadot & parachains', { ns: 'apps-config' }),
+      textBy: '',
+      value: ''
+    },
+    ...expandEndpoints(t, [prodRelayPolkadot], firstOnly, withSort),
+    {
+      isDisabled: false,
+      isHeader: true,
+      text: t('rpc.header.kusama.relay', 'Kusama & parachains', { ns: 'apps-config' }),
+      textBy: '',
+      value: ''
+    },
+    ...expandEndpoints(t, [prodRelayKusama], firstOnly, withSort),
     {
       isDisabled: false,
       isHeader: true,
@@ -35,6 +54,7 @@ export function createWsEndpoints (t: TFunction = defaultT, firstOnly = false, w
       value: ''
     },
     ...createPopArtRelay(t, firstOnly, withSort),
+    
     {
       isDisabled: false,
       isHeader: true,
@@ -42,7 +62,7 @@ export function createWsEndpoints (t: TFunction = defaultT, firstOnly = false, w
       textBy: '',
       value: ''
     },
-    ...createRococoRelay(t, firstOnly, withSort),
+    ...expandEndpoints(t, [testRelayRococo], firstOnly, withSort),
     {
       isDisabled: false,
       isHeader: true,
@@ -51,7 +71,8 @@ export function createWsEndpoints (t: TFunction = defaultT, firstOnly = false, w
       textBy: '',
       value: ''
     },
-    ...createPolkadotRelay(t, firstOnly, withSort),
+   // ...createPolkadotRelay(t, firstOnly, withSort),
+    ...expandEndpoints(t, prodChains, firstOnly, withSort),
     {
       isDisabled: false,
       isHeader: true,
@@ -59,35 +80,7 @@ export function createWsEndpoints (t: TFunction = defaultT, firstOnly = false, w
       textBy: '',
       value: ''
     },
-    ...createKusamaRelay(t, firstOnly, withSort),
-    
-    // {
-    //   isDisabled: false,
-    //   isHeader: true,
-    //   isSpaced: true,
-    //   text: t('rpc.header.westend.relay', 'Test Westend & parachains', { ns: 'apps-config' }),
-    //   textBy: '',
-    //   value: ''
-    // },  
-    // ...createWestendRelay(t, firstOnly, withSort),
-    
-    // {
-    //   isDisabled: false,
-    //   isHeader: true,
-    //   isSpaced: true,
-    //   text: t('rpc.header.live', 'Live networks', { ns: 'apps-config' }),
-    //   textBy: '',
-    //   value: ''
-    // },
-    // ...createProduction(t, firstOnly, withSort),
-    // {
-    //   isDisabled: false,
-    //   isHeader: true,
-    //   text: t('rpc.header.test', 'Test networks', { ns: 'apps-config' }),
-    //   textBy: '',
-    //   value: ''
-    // },
-    // ...createTesting(t, firstOnly, withSort),
+    ...expandEndpoints(t, testChains, firstOnly, withSort),
     {
       isDevelopment: true,
       isDisabled: false,
