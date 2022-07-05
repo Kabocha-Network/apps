@@ -26,12 +26,25 @@ export function createWsEndpoints (t: TFunction = defaultT, firstOnly = false, w
     {
       isDisabled: false,
       isHeader: true,
-      text: t('rpc.prod.edgeware', 'Edgeware', { ns: 'apps-config' }),
+      text: t('rpc.prod.edgeware', 'Edgeware Ecosystem', { ns: 'apps-config' }),
       textBy: '',
       value: ''
     }, 
     ...createProductionEdgeware(t, firstOnly, withSort),
+
     {
+      isDisabled: false,
+      isHeader: true,
+      text: t('rpc.header.popart.relay', 'Pop-Art & parachains', { ns: 'apps-config' }),
+      textBy: '',
+      value: ''
+    },
+    ...expandEndpoints(t, [testRelayPopArt], firstOnly, withSort),
+    
+  
+    {
+      isDisabled: false,
+      isHeader: true,
       isSpaced: true,
       text: t('rpc.header.polkadot.relay', 'Polkadot & parachains', { ns: 'apps-config' }),
       textBy: '',
@@ -48,14 +61,7 @@ export function createWsEndpoints (t: TFunction = defaultT, firstOnly = false, w
     ...expandEndpoints(t, [prodRelayKusama], firstOnly, withSort),
 
 
-    {
-      isDisabled: false,
-      isHeader: true,
-      text: t('rpc.header.popart.relay', 'Test Pop-Art & parachains', { ns: 'apps-config' }),
-      textBy: '',
-      value: ''
-    },
-    ...expandEndpoints(t, [testRelayPopArt], firstOnly, withSort),
+   
     
     {
       isDisabled: false,
@@ -70,7 +76,7 @@ export function createWsEndpoints (t: TFunction = defaultT, firstOnly = false, w
       isDisabled: false,
       isHeader: true,
       isSpaced: true,
-      text: t('rpc.header.polkadot.relay', 'Polkadot & parachains', { ns: 'apps-config' }),
+      text: t('rpc.header.polkadot.relay', 'Substrate based networks', { ns: 'apps-config' }),
       textBy: '',
       value: ''
     },
@@ -79,7 +85,7 @@ export function createWsEndpoints (t: TFunction = defaultT, firstOnly = false, w
     {
       isDisabled: false,
       isHeader: true,
-      text: t('rpc.header.kusama.relay', 'Kusama & parachains', { ns: 'apps-config' }),
+      text: t('rpc.header.kusama.relay', 'Testnets', { ns: 'apps-config' }),
       textBy: '',
       value: ''
     },

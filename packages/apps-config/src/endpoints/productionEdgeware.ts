@@ -28,5 +28,18 @@ export function createProductionEdgeware (t: TFunction, firstOnly: boolean, with
       }
     },
     
+    {
+      info: 'kabocha',
+      homepage: 'https://kabocha.network',
+      paraId: 2113,
+      text: 'Kabocha Parachain (KSM)',
+      providers: {
+        JelliedOwl: 'wss://kabocha.jelliedowl.com',
+        
+        // Parity: 'wss://westmint-rpc.polkadot.io',
+        // 'Patract Elara': 'wss://pub.elara.patract.io/westmint'
+      }, 
+    },
+    
   ], firstOnly, withSort);
 }

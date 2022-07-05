@@ -131,7 +131,7 @@ import nodeIpse from './nodes/ipse.png';
 import nodeJaz from './nodes/jaz.png';
 import nodeJoystream from './nodes/joystream.svg';
 import nodeJupiter from './nodes/jupiter.svg';
-import nodeKabocha from './nodes/kabocha.svg';
+//import nodeKabocha from './nodes/kabocha.svg';
 import nodeKhala from './nodes/khala.svg';
 import nodeKilt from './nodes/kilt.png';
 import nodeKlug from './nodes/klug.png';
