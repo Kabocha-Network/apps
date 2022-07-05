@@ -474,6 +474,7 @@ export const prodParasKusama: EndpointOption[] = [
   }
 ];
 
+
 export const prodParasKusamaCommon: EndpointOption[] = [
   {
     info: 'statemine',
@@ -500,6 +501,19 @@ export const prodParasKusamaCommon: EndpointOption[] = [
   }
 ];
 
+export const prodKabochaKusama: EndpointOption[] = [
+  {
+    info: 'kabocha',
+    homepage: 'https://kabocha.network',
+    paraId: 2113,
+    text: 'Kabocha',
+    providers: {
+      JelliedOwl: 'wss://kabocha.jelliedowl.com'
+    },
+    teleport: [-1]
+  }
+];
+
 export const prodRelayKusama: EndpointOption = {
   dnslink: 'kusama',
   genesisHash: KUSAMA_GENESIS,
@@ -514,8 +528,9 @@ export const prodRelayKusama: EndpointOption = {
     // 'Geometry Labs': 'wss://kusama.geometry.io/websockets', // https://github.com/polkadot-js/apps/pull/6746
     'light client': 'light://substrate-connect/kusama'
   },
-  teleport: [1000, 1001],
+  teleport: [2113, 1000, 1001],
   linked: [
+    ...prodKabochaKusama,
     ...prodParasKusamaCommon,
     ...prodParasKusama
   ]
