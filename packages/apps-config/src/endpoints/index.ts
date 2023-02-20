@@ -26,7 +26,7 @@ export function createWsEndpoints (t: TFunction = defaultT, firstOnly = false, w
     {
       isDisabled: false,
       isHeader: true,
-      text: t('rpc.prod.edgeware', 'Edgeware Ecosystem', { ns: 'apps-config' }),
+      text: t('rpc.prod.edgeware', 'Network Publics', { ns: 'apps-config' }),
       textBy: '',
       value: ''
     }, 
@@ -35,7 +35,7 @@ export function createWsEndpoints (t: TFunction = defaultT, firstOnly = false, w
     {
       isDisabled: false,
       isHeader: true,
-      text: t('rpc.header.popart.relay', 'Pop-Art & parachains', { ns: 'apps-config' }),
+      text: t('rpc.header.popart.relay', 'Publik Testnets', { ns: 'apps-config' }),
       textBy: '',
       value: ''
     },

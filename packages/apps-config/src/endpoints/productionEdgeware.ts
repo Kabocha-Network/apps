@@ -17,17 +17,7 @@ import { expandEndpoints } from './util';
 // alphabetical based on chain name
 export function createProductionEdgeware (t: TFunction, firstOnly: boolean, withSort: boolean): LinkOption[] {
   return expandEndpoints(t, [
-    
-    {
-      dnslink: 'edgeware',
-      info: 'edgeware',
-      text: t('rpc.prod.edgeware', 'Edgeware', { ns: 'apps-config' }),
-      providers: {
-        'Commonwealth Labs': 'wss://mainnet.edgewa.re',
-        OnFinality: 'wss://edgeware.api.onfinality.io/public-ws'
-      }
-    },
-    
+
     {
       info: 'kabocha',
       homepage: 'https://kabocha.network',
@@ -40,6 +30,18 @@ export function createProductionEdgeware (t: TFunction, firstOnly: boolean, with
         // 'Patract Elara': 'wss://pub.elara.patract.io/westmint'
       }, 
     },
+    
+    {
+      dnslink: 'edgeware',
+      info: 'edgeware',
+      text: t('rpc.prod.edgeware', 'Edgeware', { ns: 'apps-config' }),
+      providers: {
+        'Commonwealth Labs': 'wss://mainnet.edgewa.re',
+        OnFinality: 'wss://edgeware.api.onfinality.io/public-ws'
+      }
+    },
+    
+    
     
   ], firstOnly, withSort);
 }
