@@ -1,4 +1,4 @@
-// Copyright 2017-2022 @polkadot/react-components authors & contributors
+// Copyright 2017-2023 @polkadot/react-components authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type { DefinitionCallNamed } from '@polkadot/types/types';
@@ -19,6 +19,7 @@ export default function createOptions (runtime: Record<string, Record<string, De
 
   return Object
     .keys(runtime[sectionName])
+    .filter((s) => !s.startsWith('$'))
     .sort()
     .map((m) => section[m])
     .map(({ description, method, params }): DropdownOption => {

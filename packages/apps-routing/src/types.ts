@@ -1,11 +1,11 @@
-// Copyright 2017-2022 @polkadot/apps-routing authors & contributors
+// Copyright 2017-2023 @polkadot/apps-routing authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type { IconName } from '@fortawesome/fontawesome-svg-core';
 import type { ApiPromise } from '@polkadot/api';
 import type { AppProps, BareProps } from '@polkadot/react-components/types';
 
-export type RouteGroup = 'accounts' | 'developer' | 'governance' | 'network' | 'files' | 'settings';
+export type RouteGroup = 'accounts' | 'supersig' | 'developer' | 'governance' |  'network' | 'files' | 'settings';
 
 export interface RouteProps extends AppProps, BareProps {
   location: any;

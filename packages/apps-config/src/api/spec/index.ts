@@ -1,4 +1,4 @@
-// Copyright 2017-2022 @polkadot/apps-config authors & contributors
+// Copyright 2017-2023 @polkadot/apps-config authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type { OverrideBundleDefinition } from '@polkadot/types/types';
@@ -44,6 +44,7 @@ import encointerNodeTeeproxy from './encointer-node-teeproxy';
 import encointerPara from './encointer-para';
 import equilibrium from './equilibrium';
 import fantour from './fantour';
+import frequency from './frequency';
 import galital from './galital';
 import galitalParachain from './galital-parachain';
 import galois from './galois';
@@ -56,12 +57,11 @@ import imbue from './imbue';
 import integritee from './integritee';
 import interbtc from './interbtc';
 import ipse from './ipse';
-import joystream from './joystream';
 import jupiter from './jupiter';
 import jupiterRococo from './jupiter-rococo';
+import jur from './jur';
 import kabocha from './kabocha';
 import khala from './khala';
-import kilt from './kilt';
 import konomi from './konomi';
 import kpron from './kpron';
 import kulupu from './kulupu';
@@ -79,6 +79,7 @@ import mybank from './mybank';
 import neatcoin from './neatcoin';
 import nftmart from './nftmart';
 import nodle from './nodle';
+import oak from './oak';
 import opal from './opal';
 import opportunity from './opportunity';
 import origintrail from './origintrail';
@@ -97,6 +98,8 @@ import quartz from './quartz';
 import realis from './realis';
 import riochain from './riochain';
 import robonomics from './robonomics';
+import rootnet from './rootnet';
+import sapphire from './sapphire';
 import shibuya from './shibuya';
 import shiden from './shiden';
 import snowbridge from './snowbridge';
@@ -109,6 +112,7 @@ import subgame from './subgame';
 import subsocial from './subsocial';
 import subspace from './subspace';
 import substrateContractsNode from './substrateContractsNode';
+import supersig from './supersig-template';
 import swapdex from './swapdex';
 import t0rn from './t0rn';
 import ternoa from './ternoa';
@@ -116,6 +120,7 @@ import trustbase from './trustbase';
 import turing from './turing';
 import uart from './uart';
 import unique from './unique';
+import unitnetwork from './unitnetwork';
 import unitv from './unitv';
 import vln from './vln';
 import vlnrococo from './vln-rococo';
@@ -183,6 +188,8 @@ const spec: Record<string, OverrideBundleDefinition> = {
   'encointer-node-teeproxy': encointerNodeTeeproxy,
   'encointer-parachain': encointerPara,
   fantour,
+  frequency,
+  'frequency-rococo': frequency,
   galital,
   'galital-collator': galitalParachain,
   gamepower,
@@ -198,14 +205,12 @@ const spec: Record<string, OverrideBundleDefinition> = {
   'interbtc-standalone': interbtc,
   'interlay-parachain': interbtc,
   'ipse-node': ipse,
-  'joystream-node': joystream,
   'jupiter-prep': jupiter,
   'jupiter-rococo': jupiterRococo,
+  'jur-chain': jur,
+  kabocha,
   kerria: parallel,
   khala,
-  kabocha,
-  'kilt-parachain': kilt,
-  'kilt-spiritnet': kilt,
   'kintsugi-parachain': interbtc,
   konomi,
   kpron,
@@ -219,7 +224,6 @@ const spec: Record<string, OverrideBundleDefinition> = {
   mangata,
   'mangata-parachain': mangata,
   'manta-node': manta,
-  'mashnet-node': kilt,
   mathchain,
   'mathchain-galois': galois,
   moonbase: moonbeam,
@@ -228,11 +232,11 @@ const spec: Record<string, OverrideBundleDefinition> = {
   moonshadow: moonbeam,
   'mybank.network Testnet': mybank,
   neatcoin,
-  nft: unique,
   nftmart,
   'node-moonbeam': moonbeam,
   'node-polkadex': polkadex,
   'nodle-chain': nodle,
+  oak,
   opal,
   opportunity,
   'origintrail-parachain': origintrail,
@@ -249,6 +253,8 @@ const spec: Record<string, OverrideBundleDefinition> = {
   realis,
   'riochain-runtime': riochain,
   robonomics,
+  root: rootnet,
+  sapphire,
   shibuya,
   shiden,
   snowbridge,
@@ -264,16 +270,24 @@ const spec: Record<string, OverrideBundleDefinition> = {
   subspace,
   'substrate-contracts-node': substrateContractsNode,
   subzero: zero,
+  supersig,
+  'supersig-template': supersig,
   swapdex,
   t0rn,
   ternoa,
+  'testnet-interlay': interbtc,
+  'testnet-kintsugi': interbtc,
   trustbase,
   turing,
   uart,
+  unique,
   'unit-node': unitv,
   'unit-parachain': unitv,
+  'unitnetwork-node': unitnetwork,
+  'unitnetwork-parachain': unitnetwork,
   unorthodox: standard,
   vanilla: parallel,
+  vara: standard,
   vodka,
   'web3games-node': web3games,
   'zcloak-network': zCloak,

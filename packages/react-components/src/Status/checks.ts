@@ -1,8 +1,8 @@
-// Copyright 2017-2022 @polkadot/react-components authors & contributors
+// Copyright 2017-2023 @polkadot/react-components authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type { DispatchError, DispatchResult, Event, EventRecord } from '@polkadot/types/interfaces';
-import type { XcmV2TraitsOutcome } from '@polkadot/types/lookup';
+import type { XcmV3TraitsOutcome } from '@polkadot/types/lookup';
 
 type EventCheck = (event: Event) => string | null;
 
@@ -26,6 +26,10 @@ function dispatchResult ({ data: [result] }: Event): string | null {
   return extractError(result as DispatchResult);
 }
 
+function dispatchResultCouncil ({ data: [, result] }: Event): string | null {
+  return extractError(result as DispatchResult);
+}
+
 // [approving, timepoint, multisig, callHash, result]
 function dispatchResultMulti ({ data: [,,,, result] }: Event): string | null {
   return extractError(result as DispatchResult);
@@ -34,20 +38,27 @@ function dispatchResultMulti ({ data: [,,,, result] }: Event): string | null {
 function xcmAttempted ({ data: [outcome] }: Event): string | null {
   if (!outcome) {
     return INCOMPLETE;
-  } else if ((outcome as XcmV2TraitsOutcome).isIncomplete) {
-    const [index, error] = (outcome as XcmV2TraitsOutcome).asIncomplete;
+  } else if ((outcome as XcmV3TraitsOutcome).isIncomplete) {
+    const [, error] = (outcome as XcmV3TraitsOutcome).asIncomplete;
 
-    return `error: ${index.toString()}: ${error.type}`;
+    return `error: ${error.type}`;
   }
 
   return null;
 }
+
+const collective: Record<string, EventCheck> = {
+  Executed: dispatchResultCouncil
+};
 
 const xcmPallet: Record<string, EventCheck> = {
   Attempted: xcmAttempted
 };
 
 const CHECKS: Record<string, Record<string, EventCheck>> = {
+  allianceMotion: collective,
+  council: collective,
+  membership: collective,
   multisig: {
     MultisigExecuted: dispatchResultMulti
   },
@@ -59,6 +70,7 @@ const CHECKS: Record<string, Record<string, EventCheck>> = {
     Sudid: dispatchResult,
     SudoAsDone: dispatchResult
   },
+  technicalCommittee: collective,
   utility: {
     BatchInterrupted: batchInterrupted,
     DispatchedAs: dispatchResult

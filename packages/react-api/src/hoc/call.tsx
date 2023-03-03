@@ -1,4 +1,4 @@
-// Copyright 2017-2022 @polkadot/react-api authors & contributors
+// Copyright 2017-2023 @polkadot/react-api authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 // SInce this file is deemed deprecated (and awaiting removal), we just don't care
@@ -14,7 +14,7 @@ import type { Options } from './types';
 
 import React from 'react';
 
-import { assert, isNull, isUndefined } from '@polkadot/util';
+import { assert, isNull, isUndefined, nextTick } from '@polkadot/util';
 
 import echoTransform from '../transform/echo';
 import { isEqual, triggerChange } from '../util';
@@ -39,7 +39,7 @@ const NO_SKIP = (): boolean => false;
 // a mapping of actual error messages that has already been shown
 const errorred: Record<string, boolean> = {};
 
-export default function withCall<P extends ApiProps> (endpoint: string, { at, atProp, callOnResult, fallbacks, isMulti = false, params = [], paramName, paramPick, paramValid = false, propName, skipIf = NO_SKIP, transform = echoTransform, withIndicator = false }: Options = {}): (Inner: React.ComponentType<ApiProps>) => React.ComponentType<any> {
+export default function withCall<P extends ApiProps> (endpoint: string, { at, atProp, callOnResult, fallbacks, isMulti = false, paramName, paramPick, paramValid = false, params = [], propName, skipIf = NO_SKIP, transform = echoTransform, withIndicator = false }: Options = {}): (Inner: React.ComponentType<ApiProps>) => React.ComponentType<any> {
   return (Inner: React.ComponentType<ApiProps>): React.ComponentType<SubtractProps<P, ApiProps>> => {
     class WithPromise extends React.Component<P, State> {
       public override state: State = {
@@ -92,12 +92,12 @@ export default function withCall<P extends ApiProps> (endpoint: string, { at, at
 
         // The attachment takes time when a lot is available, set a timeout
         // to first handle the current queue before subscribing
-        setTimeout((): void => {
+        nextTick((): void => {
           this
             .subscribe(this.getParams(this.props))
             .then(NOOP)
             .catch(NOOP);
-        }, 0);
+        });
       }
 
       public override componentWillUnmount (): void {
