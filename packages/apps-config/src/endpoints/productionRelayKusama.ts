@@ -860,10 +860,7 @@ export const prodRelayKusama: EndpointOption = {
   genesisHash: KUSAMA_GENESIS,
   info: 'kusama',
   text: 'Kusama',
-  providers: {
-   
-  },
-  teleport: [2113, 1000, 1001],
+  // teleport: [2113, 1000, 1001],
   linked: [
     ...prodKabochaKusama,
     ...prodParasKusamaCommon,
@@ -882,7 +879,7 @@ export const prodRelayKusama: EndpointOption = {
     'light client': 'light://substrate-connect/kusama',
     
   },
-  // teleport: getTeleports(prodParasKusamaCommon),
+  teleport: getTeleports(prodParasKusamaCommon),
   ui: {
     color: '#000000',
     logo: chainsKusamaSVG

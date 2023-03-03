@@ -8,9 +8,10 @@ import type { TFunction, TOptions } from '../types';
 import type { LinkOption } from './types';
 
 import { createCustom, createDev, createOwn } from './development';
-import { prodChains, prodRelayKusama, prodRelayPolkadot } from './production';
+import { prodChains, prodRelayKusama, prodRelayPolkadot, prodChainPubliks } from './production';
 import { testChains, testRelayRococo, testRelayWestend } from './testing';
 import { expandEndpoints } from './util';
+import { testRelayPopArt } from './testingRelayPopArt';
 
 export { CUSTOM_ENDPOINT_KEY } from './development';
 export * from './production';
@@ -32,21 +33,24 @@ export function createWsEndpoints (t: TFunction = defaultT, firstOnly = false, w
   return [
     ...createCustom(t),
     {
-            isDisabled: false,
-            isHeader: true,
-            text: t('rpc.prod.edgeware', 'Network Publics', { ns: 'apps-config' }),
-            textBy: '',
-            value: ''
-          }, 
-    ...createProductionEdgeware(t, firstOnly, withSort),
+      isDisabled: false,
+      isHeader: true,
+      isSpaced: true,
+      text: t('rpc.prod.edgeware', 'Network Publics', { ns: 'apps-config' }),
+      textBy: '',
+      ui: {},
+      value: ''
+    }, 
+    ...expandEndpoints(t, [prodChainPubliks], firstOnly, withSort),
     {
-            isDisabled: false,
-            isHeader: true,
-            text: t('rpc.header.popart.relay', 'Publik Testnets', { ns: 'apps-config' }),
-            textBy: '',
-            value: ''
-          },
-          ...expandEndpoints(t, [testRelayPopArt], firstOnly, withSort),
+      isDisabled: false,
+      isHeader: true,
+      text: t('rpc.header.popart.relay', 'Publik Testnets', { ns: 'apps-config' }),
+      textBy: '',
+      value: '',
+      ui: {},
+    },
+    ...expandEndpoints(t, [testRelayPopArt], firstOnly, withSort),
     {
       isDisabled: false,
       isHeader: true,
@@ -89,7 +93,7 @@ export function createWsEndpoints (t: TFunction = defaultT, firstOnly = false, w
       isDisabled: false,
       isHeader: true,
       isSpaced: true,
-      text: t('rpc.header.live', 'Live networks', { ns: 'apps-config' }),
+      text: t('rpc.header.live', 'Substrate Based Networks', { ns: 'apps-config' }),
       textBy: '',
       ui: {},
       value: ''

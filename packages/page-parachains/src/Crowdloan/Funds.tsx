@@ -1,6 +1,3 @@
-// Copyright 2017-2023 @polkadot/app-parachains authors & contributors
-// SPDX-License-Identifier: Apache-2.0
-
 import type { ParaId } from '@polkadot/types/interfaces';
 import type { BN } from '@polkadot/util';
 import type { Campaign, LeasePeriod } from '../types';
@@ -62,7 +59,7 @@ function Funds ({ bestNumber, className, leasePeriod, value }: Props): React.Rea
     [leasePeriod, value]
   );
   const hasLinksMap = useIsParasLinked(allIds);
-  const [upcomingSorted, activeSorted, endedSorted] = useMemo(
+  const [activeSorted, endedSorted] = useMemo(
     () => [sortList(hasLinksMap, active), sortList(hasLinksMap, ended)],
     [active, ended, hasLinksMap]
   );
@@ -95,21 +92,6 @@ function Funds ({ bestNumber, className, leasePeriod, value }: Props): React.Rea
         className='warning centered'
         content={t<string>('Do not transfer any funds directly to a specific account that is associated with a loan or a team. Use the "Contribute" action to record the contribution on-chain using the crowdloan runtime module. When the fund is dissolved, after either the parachain lease expires or the loan ending without winning, the full value will be returned to your account by the runtime. Funds sent directly to an account, without using the crowdloan functionality, may not be returned by the receiving account.')}
       />
-      <Table
-        className={className}
-        empty={value && upcomingSorted && t<string>('No upcoming campaigns found')}
-        header={headerActiveRef.current}
-      >
-        {upcomingSorted?.map((fund) => (
-          <Fund
-            bestHash={bestHash}
-            bestNumber={bestNumber}
-            isOngoing
-            key={fund.accountId}
-            value={fund}
-          />
-        ))}
-      </Table>
       <Table
         className={className}
         empty={value && activeSorted && t<string>('No active campaigns found')}

@@ -18,8 +18,9 @@ export const testParasPopArt: EndpointOption[] = [
   {
     info: 'kabocha',
     homepage: 'https://kabocha.network',
-    paraId: 2008,
+    paraId: 2001,
     text: 'Kabocha Soupcan',
+    ui: {},
     providers: {
       JelliedOwl: 'wss://soupcan1.jelliedowl.com',
       
@@ -28,6 +29,7 @@ export const testParasPopArt: EndpointOption[] = [
     },
     teleport: [-1]
   }, 
+  
   
 ];
 
@@ -50,6 +52,7 @@ export const testRelayPopArt: EndpointOption = {
       //'light client': 'light://substrate-connect/westend'
       // 'NodeFactory(Vedran)': 'wss://westend.vedran.nodefactory.io/ws', // https://github.com/polkadot-js/apps/issues/5580
     },
+    ui: {},
   teleport: [1000, 1002],
   linked: [
     ...testParasPopArtCommon,

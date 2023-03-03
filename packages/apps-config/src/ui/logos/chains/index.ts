@@ -28,6 +28,7 @@ export { chainsGmJPEG } from './generated/gmJPEG';
 export { chainsHydratePNG } from './generated/hydratePNG';
 export { chainsIdiyanaleLogoWhiteSVG } from './generated/idiyanale_logo_whiteSVG';
 export { chainsJurPNG } from './generated/jurPNG';
+export { chainsKabochaPNG } from './generated/kabochaPNG';
 export { chainsKaruraSVG } from './generated/karuraSVG';
 export { chainsKicoPNG } from './generated/kicoPNG';
 export { chainsKintsugiPNG } from './generated/kintsugiPNG';
@@ -44,6 +45,7 @@ export { chainsOrigintrailTestnetPNG } from './generated/origintrail-testnetPNG'
 export { chainsPendulumSVG } from './generated/pendulumSVG';
 export { chainsPicassoSVG } from './generated/picassoSVG';
 export { chainsPolkadotCircleSVG } from './generated/polkadot-circleSVG';
+export { chainsPopSVG } from './generated/popSVG';
 export { chainsRiodefiPNG } from './generated/riodefiPNG';
 export { chainsRococoSVG } from './generated/rococoSVG';
 export { chainsShidenPNG } from './generated/shidenPNG';
