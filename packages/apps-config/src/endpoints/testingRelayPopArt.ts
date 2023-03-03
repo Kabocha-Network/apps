@@ -3,6 +3,11 @@
 
 import type { EndpointOption } from './types';
 
+import { chainsPopSVG } from '../ui/logos/chains';
+import { nodesKabochaSVG } from '../ui/logos/nodes';
+
+
+
 import { POPART_GENESIS } from '../api/constants';
 
 /* eslint-disable sort-keys */
@@ -20,7 +25,10 @@ export const testParasPopArt: EndpointOption[] = [
     homepage: 'https://kabocha.network',
     paraId: 2001,
     text: 'Kabocha Soupcan',
-    ui: {},
+    ui: {
+      logo: nodesKabochaSVG,
+      color: 'repeating-radial-gradient(#ff7d0f,black 4px,red 5px)'
+    },
     providers: {
       JelliedOwl: 'wss://soupcan1.jelliedowl.com',
       
@@ -52,7 +60,10 @@ export const testRelayPopArt: EndpointOption = {
       //'light client': 'light://substrate-connect/westend'
       // 'NodeFactory(Vedran)': 'wss://westend.vedran.nodefactory.io/ws', // https://github.com/polkadot-js/apps/issues/5580
     },
-    ui: {},
+    ui: {
+      logo: chainsPopSVG,
+      color: 'repeating-radial-gradient(black, black 4px, red 5px)'
+    },
   teleport: [1000, 1002],
   linked: [
     ...testParasPopArtCommon,

@@ -30,6 +30,7 @@ export const prodChainPubliks: EndpointOption[] = [
       }, 
       text: 'Kabocha Parachain (KSM)',
       ui: {
+        color: 'repeating-radial-gradient(black, black 4px, yellow 5px)',
         logo: nodesKabochaSVG
       }
     },
