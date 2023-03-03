@@ -35,13 +35,12 @@ export function createWsEndpoints (t: TFunction = defaultT, firstOnly = false, w
     {
       isDisabled: false,
       isHeader: true,
-      isSpaced: true,
-      text: t('rpc.prod.edgeware', 'Network Publics', { ns: 'apps-config' }),
+      text: t('rpc.header.publiks', 'Network Publics', { ns: 'apps-config' }),
       textBy: '',
       ui: {},
       value: ''
     }, 
-    ...expandEndpoints(t, [prodChainPubliks], firstOnly, withSort),
+    ...expandEndpoints(t, prodChainPubliks, firstOnly, withSort),
     {
       isDisabled: false,
       isHeader: true,

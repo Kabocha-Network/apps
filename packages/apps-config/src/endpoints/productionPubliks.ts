@@ -24,20 +24,34 @@ export const prodChainPubliks: EndpointOption[] = [
     {
       info: 'kabocha',
       // homepage: 'https://kabocha.network',
-      paraId: 2113,
-     
+      
       providers: {
-        JelliedOwl: 'wss://kabocha.jelliedowl.com',
+        JelliedOwl: 'wss://kabocha.jelliedowl.net',
       }, 
       text: 'Kabocha Parachain (KSM)',
       ui: {
-        color: '#224851',
         logo: nodesKabochaSVG
       }
     },
-
     {
       dnslink: 'edgeware',
+
+      info: 'edgeware',
+      text:  'Edgeware', 
+      providers: {
+        JelliedOwl: 'wss://edgeware.jelliedowl.net',
+        OnFinality: 'wss://edgeware.api.onfinality.io/public-ws'
+      },
+      ui: {
+        logo: nodesEdgewareWhitePNG
+      }
+    },
+  ]
+
+  export const prodChainEdgeware: EndpointOption[] = [
+
+    {
+      
       info: 'edgeware',
       text:  'Edgeware', 
       providers: {
@@ -67,8 +81,9 @@ export const networkPubliks: EndpointOption = {
     // 'NodeFactory(Vedran)': 'wss://westend.vedran.nodefactory.io/ws', // https://github.com/polkadot-js/apps/issues/5580
   },
   ui: {},
-teleport: [1000, 1002],
 linked: [
-  ...prodChainPubliks,
+  ...prodChainEdgeware,
+ 
+ 
 ]
 };

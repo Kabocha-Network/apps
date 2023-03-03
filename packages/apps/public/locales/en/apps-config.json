@@ -10,6 +10,7 @@
   "rpc.header.live": "Live networks",
   "rpc.header.polkadot.relay": "Polkadot & parachains",
   "rpc.header.popart.relay": "Test Pop-Art & parachains",
+  "rpc.header.publiks": "Network Publics",
   "rpc.header.rococo.relay": "Test Rococo & parachains",
   "rpc.header.test": "Test networks",
   "rpc.header.westend.relay": "Test Westend & parachains",
