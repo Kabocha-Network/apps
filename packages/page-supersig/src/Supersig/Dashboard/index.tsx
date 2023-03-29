@@ -32,7 +32,7 @@ function Overview ({ className = '', onStatusChange }: Props): React.ReactElemen
   const supersig_nonce = useCall(api.query.supersig?.nonceSupersig);
 
   const headerRef = useRef([
-    [t('Supersig collectives'), 'start', 2],
+    [t('Supersig orgs'), 'start', 2],
     [t('live proposals'), 'number'],
     [t('balance of (members)'), 'number'],
     [undefined, 'media--1500'],
